@@ -5,11 +5,10 @@ using System.Threading.Tasks;
 
 namespace Занятие_3.Model
 {
-    public class Buyer
+    public class ShopForBuyers
     {
-        public string Login { get; set; }
         public string Name { get; set; }
-        public uint Age { get; set; }
-        public int PhoneNumber { get; set; }
+        public uint OrderCount { get; set; }
+        public uint DeliveredOrderCount { get; set; }
     }
 }

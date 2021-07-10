@@ -9,7 +9,8 @@ namespace Занятие_3
     {
         public UserProfile()
         {
-            CreateMap<UserEntity, Buyer>();
+            CreateMap<UserEntity, Buyer>()
+                .ForMember(dest => dest.Login, source => source.MapFrom(src => src.Id));
         }
     }
 }

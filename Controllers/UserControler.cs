@@ -33,10 +33,10 @@ namespace Занятие_3.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            //передаём из объекта Buyer в UserEntity для записи в базу
+            //передаём из объекта Buyer в UserEntity для вывода на экран пользователю
             var UserDto = _mapper.Map<UserEntity>(new Buyer
             {
-                Id = new Guid(),
+                Login = "New Login",
                 Name = "Mike",
                 Age = 20,
                 PhoneNumber = 12345678
