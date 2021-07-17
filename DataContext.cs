@@ -12,6 +12,7 @@ namespace Занятие_3
         public DbSet <UserEntity> Users { get; set; }
         public DbSet <ShopEntity> Shops { get; set; }
         public DbSet <ProductEntity> Products { get; set; }
+        public DbSet<OrderEntity> Orders { get; set; }
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
         }
