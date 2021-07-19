@@ -21,8 +21,18 @@ namespace Занятие_3.Service
             return entity; ;
         }
         public async Task<Guid> Add(OrderEntity order)
-        {                      
-            var result = await _dbRepository.Add(order);           
+        {
+            #region OrderException
+            if (order == null)
+            {
+                throw new ArgumentException("Заказ не создан");
+            }
+            else if (order.ProductCart.Count<=0)
+            {
+                throw new ArgumentOutOfRangeException("Заказ пуст-его нельзя добавить");
+            }
+            #endregion
+            var result = await _dbRepository.Add(order);            
             await _dbRepository.SaveChangesAsync();
             return result;
         }

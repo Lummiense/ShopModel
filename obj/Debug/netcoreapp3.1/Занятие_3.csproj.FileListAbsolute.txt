@@ -49,3 +49,16 @@ C:\Work\edu\C#\Занятие3\Занятие_3\bin\Debug\netcoreapp3.1\Newtonso
 C:\Work\edu\C#\Занятие3\Занятие_3\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Work\edu\C#\Занятие3\Занятие_3\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Work\edu\C#\Занятие3\Занятие_3\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Work\edu\C#\Занятие3\Занятие_3\bin\Debug\netcoreapp3.1\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\csc.exe.config
+C:\Work\edu\C#\Занятие3\Занятие_3\bin\Debug\netcoreapp3.1\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\vbc.exe.config
+C:\Work\edu\C#\Занятие3\Занятие_3\bin\Debug\netcoreapp3.1\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\VBCSCompiler.exe.config
+C:\Work\edu\C#\Занятие3\Занятие_3\bin\Debug\netcoreapp3.1\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\csc.exe.config
+C:\Work\edu\C#\Занятие3\Занятие_3\bin\Debug\netcoreapp3.1\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\csi.exe.config
+C:\Work\edu\C#\Занятие3\Занятие_3\bin\Debug\netcoreapp3.1\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\vbc.exe.config
+C:\Work\edu\C#\Занятие3\Занятие_3\bin\Debug\netcoreapp3.1\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\VBCSCompiler.exe.config
+C:\Work\edu\C#\Занятие3\Занятие_3\bin\Debug\netcoreapp3.1\Занятие_3.StaticWebAssets.xml
+C:\Work\edu\C#\Занятие3\Занятие_3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Work\edu\C#\Занятие3\Занятие_3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Work\edu\C#\Занятие3\Занятие_3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Work\edu\C#\Занятие3\Занятие_3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Work\edu\C#\Занятие3\Занятие_3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll

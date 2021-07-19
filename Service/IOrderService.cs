@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Занятие_3.Entities;
+using Занятие_3.Model;
 
 namespace Занятие_3.Service
 {

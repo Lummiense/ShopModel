@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Занятие_3.Entities;
+using Занятие_3.Model;
 using Занятие_3.Service;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -15,9 +17,11 @@ namespace Занятие_3.Controllers
     public class ProductController : ControllerBase
     {
         private IProductService _productService;
-        public ProductController(IProductService productService)
+        private readonly IMapper _mapper;
+        public ProductController(IProductService productService,IMapper mapper)
         {
             _productService = productService;
+            _mapper = mapper;
         }
 
         [HttpGet("{id}")]
@@ -29,22 +33,24 @@ namespace Занятие_3.Controllers
             {
                 return BadRequest("Product was not found");
             }
-
-            return Ok(_product);
+            var _productDTO = _mapper.Map<ProductForBuyer>(_product);
+            return Ok(_productDTO);
         }
 
         [HttpPost("create")]
-        public async Task<ActionResult<ProductEntity>> Add(ProductEntity product)
+        public async Task<ActionResult<ProductEntity>> Add(ProductForBuyer _product)
         {
-            var result = await _productService.Add(product);
+            var _productDTO = _mapper.Map<ProductEntity>(_product);
+            var result = await _productService.Add(_productDTO);
 
             return Ok(result);
         }
 
         [HttpPut]
-        public async Task<ActionResult> Update(ProductEntity product)
+        public async Task<ActionResult> Update(ProductForBuyer _product)
         {
-            var result = await _productService.Update(product);
+            var _productDTO = _mapper.Map<ProductEntity>(_product);
+            var result = await _productService.Update(_productDTO);
 
             if (result == Guid.Empty)
             {

@@ -29,22 +29,7 @@ namespace Занятие_3.Controllers
         {
             _userService = _User;
         }
-
-        [HttpGet]
-        public IActionResult Get()
-        {
-            //передаём из объекта Buyer в UserEntity для вывода на экран пользователю
-            var UserDto = _mapper.Map<UserEntity>(new Buyer
-            {
-                Login = "New Login",
-                Name = "Mike",
-                Age = 20,
-                PhoneNumber = 12345678
-            });
-            return Ok(UserDto);
-        }
-
-
+        
         [HttpGet("{id}")]
         //TODO: Передать в качестве типа данных модель пользователя после мапинга
         public ActionResult<UserEntity> Get(Guid id)
@@ -56,22 +41,24 @@ namespace Занятие_3.Controllers
             {
                 return BadRequest("User was not found");
             }
-
-            return Ok(_user);
+            var _userDTO = _mapper.Map<Buyer>(_user);
+            return Ok(_userDTO);
         }
         
         [HttpPost("create")]
-        public async Task<ActionResult<UserEntity>> Add(UserEntity user)
+        public async Task<ActionResult<UserEntity>> Add(Buyer buyer)
         {
-            var result = await _userService.Add(user);
+            var _userDTO = _mapper.Map<UserEntity>(buyer);
+            var result = await _userService.Add(_userDTO);
 
             return Ok(result);
         }
 
         [HttpPut]
-        public async Task<ActionResult> Update(UserEntity user)
+        public async Task<ActionResult> Update(Buyer buyer)
         {
-            var result = await _userService.Update(user);
+            var _userDTO = _mapper.Map<UserEntity>(buyer);
+            var result = await _userService.Update(_userDTO);
 
             if (result == Guid.Empty)
             {

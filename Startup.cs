@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +16,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Занятие_3.Repository;
 using Занятие_3.Service;
+using Microsoft.AspNetCore.Identity;
 
 namespace Занятие_3
 {
@@ -29,12 +31,14 @@ namespace Занятие_3
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        {            
             services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
 );
+            
             //Подключаем контейнер с базой данных в формате БД - строка подключения
             services.AddDbContext<DataContext>(x => x.UseNpgsql(Configuration.GetConnectionString("Db"))) ;
+
             // Подключаем веб-интерфейс для отправки запросов в апи
             services.AddSwaggerGen(c =>
             {

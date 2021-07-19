@@ -6,45 +6,51 @@ using System.Threading.Tasks;
 using Занятие_3.Entities;
 using Занятие_3.Model;
 using Занятие_3.Service;
+using AutoMapper;
 
-//TODO: Переделать передачу данных в Order из Entity в Model
+
 namespace Занятие_3.Controllers
 {
+    
     [Route("order")]
     [ApiController]
     public class OrderController : ControllerBase
     {
         private IOrderService _orderService;
-        public OrderController(IOrderService orderService)
+        private readonly IMapper _mapper;       
+        public OrderController(IOrderService orderService, IMapper mapper)
         {
             _orderService = orderService;
+            _mapper = mapper;
         }
+       
 
         [HttpGet("{id}")]
         public ActionResult<OrderEntity> Get(Guid id)
         {
+            
             var _order = _orderService.Get(id);
-
             if (_order == null)
             {
                 return BadRequest("Order was not found");
             }
-
-            return Ok(_order);
+            var _orderDTO = _mapper.Map<Cart>(_order);
+            return Ok(_orderDTO);
         }
 
         [HttpPost("create")]
-        public async Task<ActionResult<OrderEntity>> Add(OrderEntity order)
+        public async Task<ActionResult<OrderEntity>> Add(Cart cart)
         {
-            var result = await _orderService.Add(order);
-
+            var _cartDTO = _mapper.Map<OrderEntity>(cart);
+            var result = await _orderService.Add(_cartDTO);
             return Ok(result);
         }
 
         [HttpPut]
-        public async Task<ActionResult> Update(OrderEntity order)
+        public async Task<ActionResult> Update(Cart cart)
         {
-            var result = await _orderService.Update(order);
+            var _cartDTO = _mapper.Map<OrderEntity>(cart);
+            var result = await _orderService.Update(_cartDTO);
 
             if (result == Guid.Empty)
             {
