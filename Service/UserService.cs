@@ -51,7 +51,7 @@ namespace Занятие_3.Service
             var AddBuyer =await _dbRepository.Add(_buyer);
             var Response = Authentication(new AuthenticationRequest
             {
-                Username = _buyer.Login,
+                Email = _buyer.Login,
                 //Password = _buyer.Password
             });
             return Response;

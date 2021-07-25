@@ -49,7 +49,7 @@ namespace Занятие_3
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IShopService, ShopService>();
             services.AddAutoMapper(typeof(Startup));
-            services.AddIdentity<IdentityUser,IdentityRole>()
+            services.AddIdentityCore<IdentityUser>()
                 .AddEntityFrameworkStores<DataContext>()
                 .AddDefaultTokenProviders()
                 .AddSignInManager();

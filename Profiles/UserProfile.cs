@@ -1,9 +1,8 @@
-﻿using System;
+﻿using AutoMapper;
 using Занятие_3.Entities;
-using AutoMapper;
 using Занятие_3.Model;
 
-namespace Занятие_3
+namespace Занятие_3.Profiles
 {
     public class UserProfile:Profile
     {
