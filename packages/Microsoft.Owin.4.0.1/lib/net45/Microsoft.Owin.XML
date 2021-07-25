@@ -753,7 +753,7 @@
             This wraps OWIN environment dictionary and provides strongly typed accessors.
             </summary>
         </member>
-        <member name="P:Microsoft.Owin.IOwinContext.Request">
+        <member name="P:Microsoft.Owin.IOwinContext.request">
             <summary>
             Gets a wrapper exposing request specific properties.
             </summary>
@@ -949,11 +949,11 @@
             </summary>
             <returns>The server.RemotePort.</returns>
         </member>
-        <member name="P:Microsoft.Owin.IOwinRequest.User">
+        <member name="P:Microsoft.Owin.IOwinRequest.user">
             <summary>
-            Gets or set the server.User.
+            Gets or set the server.user.
             </summary>
-            <returns>The server.User.</returns>
+            <returns>The server.user.</returns>
         </member>
         <member name="M:Microsoft.Owin.IOwinRequest.ReadFormAsync">
             <summary>
@@ -1314,7 +1314,7 @@
             </summary>
             <param name="environment">OWIN environment dictionary which stores state information about the request, response and relevant server state.</param>
         </member>
-        <member name="P:Microsoft.Owin.OwinContext.Request">
+        <member name="P:Microsoft.Owin.OwinContext.request">
             <summary>
             Gets a wrapper exposing request specific properties.
             </summary>
@@ -2142,7 +2142,7 @@
             Used to interact with authentication middleware that have been chained in the pipeline
             </summary>
         </member>
-        <member name="P:Microsoft.Owin.Security.IAuthenticationManager.User">
+        <member name="P:Microsoft.Owin.Security.IAuthenticationManager.user">
             <summary>
             Returns the current user for the request
             </summary>
@@ -3078,11 +3078,11 @@
             </summary>
             <returns>The server.RemotePort.</returns>
         </member>
-        <member name="P:Microsoft.Owin.OwinRequest.User">
+        <member name="P:Microsoft.Owin.OwinRequest.user">
             <summary>
-            Gets or set the server.User.
+            Gets or set the server.user.
             </summary>
-            <returns>The server.User.</returns>
+            <returns>The server.user.</returns>
         </member>
         <member name="M:Microsoft.Owin.OwinRequest.ReadFormAsync">
             <summary>

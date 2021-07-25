@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Занятие_3.Entities;
+using ShopApi.Entities;
 
-namespace Занятие_3.Repository
+namespace ShopApi.Repository
 {
     public interface IDbRepository
     {

@@ -1,147 +1,64 @@
-﻿using AutoMapper;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Authentication;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
-using Занятие_3.Entities;
-using Занятие_3.Model;
-using Занятие_3.Repository;
+using AutoMapper;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using ShopApi.Entities;
+using ShopApi.Model;
 
-namespace Занятие_3.Service
+namespace ShopApi.Service
 {
-    //Todo: проверка на вводимые данные
     public class UserService : IUserService
     {
-        private readonly IDbRepository _dbRepository;
-        private readonly IConfiguration _configuration;
+        private readonly UserManager<UserEntity> _userManager;
         private readonly IMapper _mapper;
-        public UserService(IDbRepository dbRepository, IConfiguration configuration, IMapper mapper)
+        
+        public UserService(UserManager<UserEntity> userManager, IMapper mapper)
         {
-            _dbRepository = dbRepository;
-            _configuration = configuration;
+            _userManager = userManager;
             _mapper = mapper;
         }
-        /// <summary>
-        /// Аутентификация зарегистрированого пользователя.
-        /// </summary>
-        /// <param name="Request"></param>
-        /// <returns></returns>
-        public AuthenticationResponse Authentication(AuthenticationRequest Request)
-        {
-            //  var _user = _dbRepository.GetAll<UserEntity>()
-            //      .FirstOrDefault(x => x.Login == Request.Username && x.Password == Request.Password);
 
-            //  if (_user == null)
-            //  {
-            //      throw new ArgumentNullException("Такого пользователя не существует");
-            //  }
-            //  //Добавить генерацию токена
-            //// var token = _configuration.
-            return null;    
-        }
-        /// <summary>
-        /// Регистрация нового пользователя.
-        /// </summary>
-        /// <param name="buyer"></param>
-        /// <returns></returns>
-        public async Task<AuthenticationResponse> Registration(Buyer buyer)
+        public async Task<LoginResponse> Authentication(LoginRequest request)
         {
-            var _buyer = _mapper.Map<UserEntity>(buyer);
-            var AddBuyer =await _dbRepository.Add(_buyer);
-            var Response = Authentication(new AuthenticationRequest
+            var user = await _userManager.FindByNameAsync(request.Username);
+            
+            if (user != null && await _userManager.CheckPasswordAsync(user, request.Password))
             {
-                Email = _buyer.Login,
-                //Password = _buyer.Password
-            });
-            return Response;
-        }
-
-        public IEnumerable<UserEntity> GetAll()
-        {
-            return _dbRepository.GetAll<UserEntity>();
-        }
-        public async Task<Guid> Add(UserEntity user)
-        {
-            var result =await _dbRepository.Add(user) ;
-            #region UserException
-            if (result ==null)
-            {
-                throw new ArgumentException("Пользователь не добавлен");
+                var authClaims = new[]
+                {
+                    new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                };
+                var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("7S79jvOkEdwoRqHx"));
+                var token = new JwtSecurityToken(
+                    expires: DateTime.Now.AddDays(5),
+                    claims: authClaims,
+                    signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
+                );
+                return new LoginResponse
+                {
+                    Token = new JwtSecurityTokenHandler().WriteToken(token),
+                    Expiration = token.ValidTo
+                };
             }
-            else if (string.IsNullOrWhiteSpace(user.Name)||user.Name.Length<=1)
+            
+            throw new AuthenticationException("login failed");
+        }
+
+        public async Task Registration(RegisterRequest request)
+        {
+            var entity = _mapper.Map<UserEntity>(request);
+            var result = await _userManager.CreateAsync(entity, request.Password);
+
+            if (!result.Succeeded)
             {
-                throw new ArgumentOutOfRangeException("Не верный формат имени пользователя");
+                throw new AuthenticationException();
             }
-            #endregion
-
-            await _dbRepository.SaveChangesAsync();
-            return result;
         }
-
-        public UserEntity Get(Guid id)
-        {
-            var entity = _dbRepository.Get<UserEntity>().FirstOrDefault(x => x.Id == id);
-            return entity;
-        }
-
-        public async Task<Guid> Update(UserEntity user)
-        {
-            await _dbRepository.Update<UserEntity>(user);
-            await _dbRepository.SaveChangesAsync();
-
-            return user.Id;
-        }
-
-        public async Task Delete(Guid id)
-        {
-            await _dbRepository.Delete<UserEntity>(id);
-            await _dbRepository.SaveChangesAsync();
-        }
-
-        
-
-
-        #region Реализация без паттерна Репозиторий.
-        //string userID;
-        //List<User> UserList = new List<User>();
-
-        //public string UserID
-        //{
-        //    get
-        //    {
-        //        return userID;
-        //    }
-        //    set
-        //    {
-        //        userID = value;
-        //    }
-        //}
-        //public string GetUserId(string id)
-        //{
-        //    id = UserID;
-        //    return UserID;
-        //}
-        //public User AddUser(User user)
-        //{
-
-        //    UserList.Add(user);
-        //    return user;
-        //}
-        //public void DelUser (int id,User user)
-        //{
-        //    UserList.Add(user);
-        //    user.Id = id;
-        //    UserList.Remove(user);
-        //}
-
-
-
-
-        //public User UserInformation(User user)
-        //{
-        //    return user;
-        //}
-        #endregion
     }
 }

@@ -11,7 +11,7 @@
         </member>
         <member name="P:Microsoft.Owin.Security.Twitter.Messages.AccessToken.UserId">
             <summary>
-            Gets or sets the Twitter User ID
+            Gets or sets the Twitter user ID
             </summary>
         </member>
         <member name="P:Microsoft.Owin.Security.Twitter.Messages.AccessToken.ScreenName">

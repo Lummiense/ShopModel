@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Занятие_3.Entities
+namespace ShopApi.Entities
 {
     public interface IEntity
     {

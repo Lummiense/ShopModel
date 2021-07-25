@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Занятие_3.Migrations
+namespace ShopApi.Migrations
 {
     public partial class Base_change2 : Migration
     {

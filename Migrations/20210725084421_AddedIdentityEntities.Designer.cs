@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using Занятие_3;
+using ShopApi;
 
-namespace Занятие_3.Migrations
+namespace ShopApi.Migrations
 {
     [DbContext(typeof(DataContext))]
     [Migration("20210725084421_AddedIdentityEntities")]
@@ -83,7 +83,7 @@ namespace Занятие_3.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("text");
 
-                    b.Property<string>("Email")
+                    b.Property<string>("Username")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
 
@@ -320,7 +320,7 @@ namespace Занятие_3.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .HasColumnType("text");
 
-                    b.Property<string>("Email")
+                    b.Property<string>("Username")
                         .HasColumnType("text");
 
                     b.Property<bool>("EmailConfirmed")

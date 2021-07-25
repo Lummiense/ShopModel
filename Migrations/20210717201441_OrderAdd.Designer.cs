@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using Занятие_3;
+using ShopApi;
 
-namespace Занятие_3.Migrations
+namespace ShopApi.Migrations
 {
     [DbContext(typeof(DataContext))]
     [Migration("20210717201441_OrderAdd")]

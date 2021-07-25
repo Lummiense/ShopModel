@@ -452,9 +452,9 @@
                 Suggested user name for a user
             </summary>
         </member>
-        <member name="P:Microsoft.AspNet.Identity.Owin.ExternalLoginInfo.Email">
+        <member name="P:Microsoft.AspNet.Identity.Owin.ExternalLoginInfo.Username">
             <summary>
-                Email claim from the external identity
+                Username claim from the external identity
             </summary>
         </member>
         <member name="P:Microsoft.AspNet.Identity.Owin.ExternalLoginInfo.ExternalIdentity">
@@ -625,7 +625,7 @@
         </member>
         <member name="F:Microsoft.AspNet.Identity.Owin.SignInStatus.LockedOut">
             <summary>
-            User is locked out
+            user is locked out
             </summary>
         </member>
         <member name="F:Microsoft.AspNet.Identity.Owin.SignInStatus.RequiresVerification">

@@ -719,12 +719,12 @@
         </member>
         <member name="P:Microsoft.AspNet.Identity.EmailTokenProvider`2.Subject">
             <summary>
-                Email subject used when a token notification is received
+                Username subject used when a token notification is received
             </summary>
         </member>
         <member name="P:Microsoft.AspNet.Identity.EmailTokenProvider`2.BodyFormat">
             <summary>
-                Email body which should contain a formatted string which the token will be the only argument
+                Username body which should contain a formatted string which the token will be the only argument
             </summary>
         </member>
         <member name="T:Microsoft.AspNet.Identity.PhoneNumberTokenProvider`1">
@@ -1566,13 +1566,13 @@
         </member>
         <member name="T:Microsoft.AspNet.Identity.ClaimsIdentityFactory`1">
             <summary>
-                Creates a ClaimsIdentity from a User
+                Creates a ClaimsIdentity from a user
             </summary>
             <typeparam name="TUser"></typeparam>
         </member>
         <member name="T:Microsoft.AspNet.Identity.ClaimsIdentityFactory`2">
             <summary>
-                Creates a ClaimsIdentity from a User
+                Creates a ClaimsIdentity from a user
             </summary>
             <typeparam name="TUser"></typeparam>
             <typeparam name="TKey"></typeparam>
@@ -1788,7 +1788,7 @@
         </member>
         <member name="P:Microsoft.AspNet.Identity.Resources.DuplicateEmail">
             <summary>
-              Looks up a localized string similar to Email &apos;{0}&apos; is already taken..
+              Looks up a localized string similar to Username &apos;{0}&apos; is already taken..
             </summary>
         </member>
         <member name="P:Microsoft.AspNet.Identity.Resources.DuplicateName">
@@ -1803,7 +1803,7 @@
         </member>
         <member name="P:Microsoft.AspNet.Identity.Resources.InvalidEmail">
             <summary>
-              Looks up a localized string similar to Email &apos;{0}&apos; is invalid..
+              Looks up a localized string similar to Username &apos;{0}&apos; is invalid..
             </summary>
         </member>
         <member name="P:Microsoft.AspNet.Identity.Resources.InvalidToken">
@@ -1813,7 +1813,7 @@
         </member>
         <member name="P:Microsoft.AspNet.Identity.Resources.InvalidUserName">
             <summary>
-              Looks up a localized string similar to User name {0} is invalid, can only contain letters or digits..
+              Looks up a localized string similar to user name {0} is invalid, can only contain letters or digits..
             </summary>
         </member>
         <member name="P:Microsoft.AspNet.Identity.Resources.LockoutNotEnabled">
@@ -1933,12 +1933,12 @@
         </member>
         <member name="P:Microsoft.AspNet.Identity.Resources.UserAlreadyHasPassword">
             <summary>
-              Looks up a localized string similar to User already has a password set..
+              Looks up a localized string similar to user already has a password set..
             </summary>
         </member>
         <member name="P:Microsoft.AspNet.Identity.Resources.UserAlreadyInRole">
             <summary>
-              Looks up a localized string similar to User already in role..
+              Looks up a localized string similar to user already in role..
             </summary>
         </member>
         <member name="P:Microsoft.AspNet.Identity.Resources.UserIdNotFound">
@@ -1948,12 +1948,12 @@
         </member>
         <member name="P:Microsoft.AspNet.Identity.Resources.UserNameNotFound">
             <summary>
-              Looks up a localized string similar to User {0} does not exist..
+              Looks up a localized string similar to user {0} does not exist..
             </summary>
         </member>
         <member name="P:Microsoft.AspNet.Identity.Resources.UserNotInRole">
             <summary>
-              Looks up a localized string similar to User is not in role..
+              Looks up a localized string similar to user is not in role..
             </summary>
         </member>
         <member name="T:Microsoft.AspNet.Identity.IdentityResult">
@@ -2042,7 +2042,7 @@
         </member>
         <member name="P:Microsoft.AspNet.Identity.UserLoginInfo.ProviderKey">
             <summary>
-                User specific key for the login provider
+                user specific key for the login provider
             </summary>
         </member>
         <member name="T:Microsoft.AspNet.Identity.IUser">
@@ -2068,7 +2068,7 @@
         </member>
         <member name="T:Microsoft.AspNet.Identity.UserManager`1">
             <summary>
-                UserManager for users where the primary key for the User is of type string
+                UserManager for users where the primary key for the user is of type string
             </summary>
             <typeparam name="TUser"></typeparam>
         </member>

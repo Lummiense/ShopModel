@@ -164,7 +164,7 @@
             <param name="refreshToken">The refresh token provided by Microsoft authentication service</param>
             <param name="expires">Seconds until expiration</param>
         </member>
-        <member name="P:Microsoft.Owin.Security.MicrosoftAccount.MicrosoftAccountAuthenticatedContext.User">
+        <member name="P:Microsoft.Owin.Security.MicrosoftAccount.MicrosoftAccountAuthenticatedContext.user">
             <summary>
             Gets the JSON-serialized user
             </summary>
@@ -204,7 +204,7 @@
             Gets the user last name
             </summary>
         </member>
-        <member name="P:Microsoft.Owin.Security.MicrosoftAccount.MicrosoftAccountAuthenticatedContext.Email">
+        <member name="P:Microsoft.Owin.Security.MicrosoftAccount.MicrosoftAccountAuthenticatedContext.Username">
             <summary>
             Gets the user email address
             </summary>

@@ -52,7 +52,7 @@
     <member name="P:Microsoft.Owin.Security.MicrosoftAccount.MicrosoftAccountAuthenticatedContext.AccessToken">
       <summary>Получает токен доступа, предоставленный службой проверки подлинности Майкрософт</summary>
     </member>
-    <member name="P:Microsoft.Owin.Security.MicrosoftAccount.MicrosoftAccountAuthenticatedContext.Email">
+    <member name="P:Microsoft.Owin.Security.MicrosoftAccount.MicrosoftAccountAuthenticatedContext.Username">
       <summary>Получает адрес электронной почты пользователя</summary>
     </member>
     <member name="P:Microsoft.Owin.Security.MicrosoftAccount.MicrosoftAccountAuthenticatedContext.ExpiresIn">
@@ -79,7 +79,7 @@
     <member name="P:Microsoft.Owin.Security.MicrosoftAccount.MicrosoftAccountAuthenticatedContext.RefreshToken">
       <summary>Получает токен обновления, предоставленный службой проверки подлинности Майкрософт</summary>
     </member>
-    <member name="P:Microsoft.Owin.Security.MicrosoftAccount.MicrosoftAccountAuthenticatedContext.User">
+    <member name="P:Microsoft.Owin.Security.MicrosoftAccount.MicrosoftAccountAuthenticatedContext.user">
       <summary>Получает пользователя, сериализованного в формате JSON</summary>
     </member>
     <member name="T:Microsoft.Owin.Security.MicrosoftAccount.MicrosoftAccountAuthenticationMiddleware">

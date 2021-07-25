@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Занятие_3.Migrations
+namespace ShopApi.Migrations
 {
     public partial class OrderAdd : Migration
     {

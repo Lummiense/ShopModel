@@ -100,7 +100,7 @@
       <returns>Коллекция непроверенных значений строки запроса.</returns>
     </member>
     <member name="T:System.Web.Helpers.Validation">
-      <summary>Исключает поля объекта Request из проверки на наличие потенциально опасной разметки HTML и клиентских сценариев.</summary>
+      <summary>Исключает поля объекта request из проверки на наличие потенциально опасной разметки HTML и клиентских сценариев.</summary>
     </member>
     <member name="M:System.Web.Helpers.Validation.Unvalidated(System.Web.HttpRequest)">
       <summary>Возвращает версию значений формы, файлов cookie и переменных строк запроса без предварительной проверки на наличие HTML-разметки и клиентских сценариев.</summary>
@@ -114,12 +114,12 @@
       <param name="key">Имя поля, которое необходимо исключить из проверки.<paramref name="key" /> может ссылаться на поле формы, файл cookie или переменную строки запроса.</param>
     </member>
     <member name="M:System.Web.Helpers.Validation.Unvalidated(System.Web.HttpRequestBase)">
-      <summary>Возвращает все значения из объекта Request (включая поля формы, файлы cookie и строку запроса) без предварительной проверки на наличие разметки HTML и клиентских сценариев.</summary>
+      <summary>Возвращает все значения из объекта request (включая поля формы, файлы cookie и строку запроса) без предварительной проверки на наличие разметки HTML и клиентских сценариев.</summary>
       <returns>Объект, который содержит непроверенные версии значений формы, файлов cookie и строк запроса.</returns>
       <param name="request">Объект <see cref="T:System.Web.HttpRequest" />, который содержит значения для исключения из проверки.</param>
     </member>
     <member name="M:System.Web.Helpers.Validation.Unvalidated(System.Web.HttpRequestBase,System.String)">
-      <summary>Возвращает заданное значение из объекта Request, не проверяя его на наличие разметки HTML и клиентских сценариев.</summary>
+      <summary>Возвращает заданное значение из объекта request, не проверяя его на наличие разметки HTML и клиентских сценариев.</summary>
       <returns>Строка с непроверенным текстом из указанного поля, файла cookie или значения строки запроса.</returns>
       <param name="request">Объект <see cref="T:System.Web.HttpRequestBase" />, который содержит значения для исключения из проверки.</param>
       <param name="key">Имя поля, которое необходимо исключить из проверки.<paramref name="key" /> может ссылаться на поле формы, файл cookie или переменную строки запроса.</param>
@@ -703,7 +703,7 @@
       <summary>Предоставляет доступ через массив к данным страницы, общим для страниц, страниц макетов и частичных страниц.</summary>
       <returns>Объект-массив для доступа к данным страницы.</returns>
     </member>
-    <member name="P:System.Web.WebPages.HelperPage.Request">
+    <member name="P:System.Web.WebPages.HelperPage.request">
       <summary>Получает объект <see cref="T:System.Web.HttpRequest" /> для текущего HTTP-запроса.</summary>
       <returns>Объект <see cref="T:System.Web.HttpRequest" />, содержащий значения HTTP, отправленные клиентом во время веб-запроса.</returns>
     </member>
@@ -723,7 +723,7 @@
       <summary>Получает данные, связанные с путем URL-адреса.</summary>
       <returns>Данные, связанные с путем URL-адреса.</returns>
     </member>
-    <member name="P:System.Web.WebPages.HelperPage.User">
+    <member name="P:System.Web.WebPages.HelperPage.user">
       <summary>Возвращает пользовательское значение на основе контекста HTTP.</summary>
       <returns>Пользовательское значение на основе контекста HTTP.</returns>
     </member>
@@ -1605,14 +1605,14 @@
       <param name="path">Путь страницы для отображения.</param>
       <param name="data">Дополнительные данные, используемые для визуализации страницы.</param>
     </member>
-    <member name="P:System.Web.WebPages.WebPageRenderingBase.Request"></member>
+    <member name="P:System.Web.WebPages.WebPageRenderingBase.request"></member>
     <member name="P:System.Web.WebPages.WebPageRenderingBase.Response"></member>
     <member name="P:System.Web.WebPages.WebPageRenderingBase.Server"></member>
     <member name="P:System.Web.WebPages.WebPageRenderingBase.Session"></member>
     <member name="P:System.Web.WebPages.WebPageRenderingBase.TemplateInfo"></member>
     <member name="P:System.Web.WebPages.WebPageRenderingBase.UICulture"></member>
     <member name="P:System.Web.WebPages.WebPageRenderingBase.UrlData"></member>
-    <member name="P:System.Web.WebPages.WebPageRenderingBase.User"></member>
+    <member name="P:System.Web.WebPages.WebPageRenderingBase.user"></member>
     <member name="T:System.Web.WebPages.Html.HtmlHelper">
       <summary>Предоставляет поддержку отображения элементов управления HTML-форм и проверки форм на веб-странице.</summary>
     </member>

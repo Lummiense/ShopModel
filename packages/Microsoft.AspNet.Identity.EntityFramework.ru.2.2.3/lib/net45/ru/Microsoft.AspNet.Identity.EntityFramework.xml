@@ -225,26 +225,26 @@
     <member name="M:Microsoft.AspNet.Identity.EntityFramework.TokenStore`1.FindAsync(System.String,System.Boolean,System.Threading.CancellationToken)"></member>
     <member name="M:Microsoft.AspNet.Identity.EntityFramework.TokenStore`1.RemoveAsync(System.String,System.Threading.CancellationToken)"></member>
     <member name="M:Microsoft.AspNet.Identity.EntityFramework.TokenStore`1.UpdateAsync(Microsoft.AspNet.Identity.IToken,System.Threading.CancellationToken)"></member>
-    <member name="T:Microsoft.AspNet.Identity.EntityFramework.User">
+    <member name="T:Microsoft.AspNet.Identity.EntityFramework.user">
       <summary>EntityType that implements IUser <see cref="T:Microsoft.AspNet.Identity.IUser" /></summary>
     </member>
-    <member name="M:Microsoft.AspNet.Identity.EntityFramework.User.#ctor">
+    <member name="M:Microsoft.AspNet.Identity.EntityFramework.user.#ctor">
       <summary>Constructor</summary>
     </member>
-    <member name="M:Microsoft.AspNet.Identity.EntityFramework.User.#ctor(System.String)">
+    <member name="M:Microsoft.AspNet.Identity.EntityFramework.user.#ctor(System.String)">
       <summary>Constructor that takes userName</summary>
     </member>
-    <member name="P:Microsoft.AspNet.Identity.EntityFramework.User.Id"></member>
-    <member name="P:Microsoft.AspNet.Identity.EntityFramework.User.Logins">
+    <member name="P:Microsoft.AspNet.Identity.EntityFramework.user.Id"></member>
+    <member name="P:Microsoft.AspNet.Identity.EntityFramework.user.Logins">
       <summary>The user's logins</summary>
     </member>
-    <member name="P:Microsoft.AspNet.Identity.EntityFramework.User.Management">
+    <member name="P:Microsoft.AspNet.Identity.EntityFramework.user.Management">
       <summary>The user's management object</summary>
     </member>
-    <member name="P:Microsoft.AspNet.Identity.EntityFramework.User.Roles">
+    <member name="P:Microsoft.AspNet.Identity.EntityFramework.user.Roles">
       <summary>The user's roles</summary>
     </member>
-    <member name="P:Microsoft.AspNet.Identity.EntityFramework.User.UserName"></member>
+    <member name="P:Microsoft.AspNet.Identity.EntityFramework.user.UserName"></member>
     <member name="T:Microsoft.AspNet.Identity.EntityFramework.UserClaim">
       <summary>EntityType that represents one specific user claim <see cref="T:Microsoft.AspNet.Identity.IUserClaim" /></summary>
     </member>
@@ -263,8 +263,8 @@
       <summary>Unique key for the user claim</summary>
       <returns>The unique key for the user claim.</returns>
     </member>
-    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserClaim.User">
-      <summary>Navigation property setting up the foreign key for User</summary>
+    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserClaim.user">
+      <summary>Navigation property setting up the foreign key for user</summary>
     </member>
     <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserClaim.UserId">
       <summary>Gets or sets the user identifier associated with the claim.</summary>
@@ -291,8 +291,8 @@
     </member>
     <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserLogin.LoginProvider"></member>
     <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserLogin.ProviderKey"></member>
-    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserLogin.User">
-      <summary>Navigation property setting up the foreign key for User</summary>
+    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserLogin.user">
+      <summary>Navigation property setting up the foreign key for user</summary>
     </member>
     <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserLogin.UserId"></member>
     <member name="T:Microsoft.AspNet.Identity.EntityFramework.UserLoginStore`1">
@@ -326,8 +326,8 @@
       <summary>Gets or sets the time when the user recently signed in.</summary>
       <returns>The time when the user recently signed in.</returns>
     </member>
-    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserManagement.User">
-      <summary>Navigation property setting up the foreign key for User</summary>
+    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserManagement.user">
+      <summary>Navigation property setting up the foreign key for user</summary>
     </member>
     <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserManagement.UserId">
       <summary>Gets or sets the unique identifier of the user.</summary>
@@ -379,8 +379,8 @@
       <summary>Gets or sets the role identifier.</summary>
       <returns>The role identifier.</returns>
     </member>
-    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserRole.User">
-      <summary>Navigation property setting up the foreign key for User</summary>
+    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserRole.user">
+      <summary>Navigation property setting up the foreign key for user</summary>
     </member>
     <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserRole.UserId">
       <summary>Gets or sets the user identifier.</summary>

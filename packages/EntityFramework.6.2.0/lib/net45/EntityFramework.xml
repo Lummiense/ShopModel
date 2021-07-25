@@ -13587,7 +13587,7 @@
             </summary>
             <param name="entityEntry"> DbEntityEntry instance to be validated. </param>
             <param name="items">
-            User-defined dictionary containing additional info for custom validation. It will be passed to
+            user-defined dictionary containing additional info for custom validation. It will be passed to
             <see cref="T:System.ComponentModel.DataAnnotations.ValidationContext"/>
             and will be exposed as
             <see cref="P:System.ComponentModel.DataAnnotations.ValidationContext.Items"/>

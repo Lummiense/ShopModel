@@ -1,31 +1,25 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Занятие_3.Repository;
-using Занятие_3.Service;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using ShopApi.Entities;
+using ShopApi.Repository;
+using ShopApi.Service;
 
-namespace Занятие_3
+namespace ShopApi
 {
     public class Startup
     {
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-        }
+        } 
 
         public IConfiguration Configuration { get; }
 
@@ -33,11 +27,12 @@ namespace Занятие_3
         public void ConfigureServices(IServiceCollection services)
         {            
             services.AddControllers().AddNewtonsoftJson(options =>
-    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-);
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
             
             //Подключаем контейнер с базой данных в формате БД - строка подключения
-            services.AddDbContext<DataContext>(x => x.UseNpgsql(Configuration.GetConnectionString("Db"))) ;
+            services.AddDbContext<DataContext>(x => 
+                x.UseNpgsql(Configuration.GetConnectionString("Db"))) ;
 
             // Подключаем веб-интерфейс для отправки запросов в апи
             services.AddSwaggerGen(c =>
@@ -49,24 +44,31 @@ namespace Занятие_3
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IShopService, ShopService>();
             services.AddAutoMapper(typeof(Startup));
-            services.AddIdentityCore<IdentityUser>()
+            
+            services.AddIdentity<UserEntity, IdentityRole>()
                 .AddEntityFrameworkStores<DataContext>()
-                .AddDefaultTokenProviders()
-                .AddSignInManager();
-            services.AddAuthentication(o =>
-            {
-                o.DefaultScheme = IdentityConstants.ApplicationScheme;
-                o.DefaultSignInScheme = IdentityConstants.ExternalScheme;
-            })
-            .AddIdentityCookies(o => { });
-
+                .AddDefaultTokenProviders();
+            services.AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
+                .AddJwtBearer(options =>
+                {
+                    options.SaveToken = true;
+                    options.RequireHttpsMetadata = false;
+                    options.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidateIssuer = false,
+                        ValidateAudience = false,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("7S79jvOkEdwoRqHx"))
+                    };
+                });
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-
-            //app.UseHttpsRedirection();
             app.UseSwagger();
             app.UseSwaggerUI(x =>
             {
@@ -76,18 +78,7 @@ namespace Занятие_3
             app.UseAuthentication();
             app.UseAuthorization();
            
-                app.UseEndpoints(endpoints =>
-            {
-                
-                endpoints.MapControllers();
-
-                /////Точка остановки поиска, расположенная в URL
-                //endpoints.MapGet("/user/create", async context =>
-                //{
-
-                //    await context.Response.WriteAsync("Hello User!");
-                //});
-            });
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
         }
     }
 }

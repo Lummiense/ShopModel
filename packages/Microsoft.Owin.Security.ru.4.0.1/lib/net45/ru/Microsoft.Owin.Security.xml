@@ -338,7 +338,7 @@
       <summary>Однократно вызывается общим кодом после инициализации.Если ПО промежуточного слоя для проверки подлинности напрямую отвечает на специальные известные пути, оно должно переопределить этот виртуальный путь, сравнить путь запроса с известными путями, предоставить соответствующую информацию об ответе и передать значение «true», чтобы прекратить дальнейшую обработку.</summary>
       <returns>Возвращение значения false приведет к тому, что общий код вызовет следующее ПО промежуточного слоя в очереди.Если возвращено значение true, общий код начнет асинхронное перемещение для выполнения, не вызывая оставшуюся часть конвейера ПО промежуточного слоя.</returns>
     </member>
-    <member name="P:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler.Request"></member>
+    <member name="P:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler.request"></member>
     <member name="P:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler.RequestPathBase"></member>
     <member name="P:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler.Response"></member>
     <member name="M:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler.TeardownCoreAsync"></member>
@@ -403,7 +403,7 @@
       <summary>Вспомогательный код, используемый при внедрении промежуточного ПО для проверки подлинности</summary>
     </member>
     <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.AddUserIdentity(System.Security.Principal.IIdentity)">
-      <summary>Добавьте дополнительный ClaimsIdentity к ClaimsPrincipal в ключе среды "server.User"</summary>
+      <summary>Добавьте дополнительный ClaimsIdentity к ClaimsPrincipal в ключе среды "server.user"</summary>
     </member>
     <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.Equals(Microsoft.Owin.Security.Infrastructure.SecurityHelper)"></member>
     <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.Equals(System.Object)"></member>
@@ -496,7 +496,7 @@
     </member>
     <member name="M:Microsoft.Owin.Security.Provider.BaseContext.#ctor(Microsoft.Owin.IOwinContext)"></member>
     <member name="P:Microsoft.Owin.Security.Provider.BaseContext.OwinContext"></member>
-    <member name="P:Microsoft.Owin.Security.Provider.BaseContext.Request"></member>
+    <member name="P:Microsoft.Owin.Security.Provider.BaseContext.request"></member>
     <member name="P:Microsoft.Owin.Security.Provider.BaseContext.Response"></member>
     <member name="T:Microsoft.Owin.Security.Provider.BaseContext`1">
       <summary>Базовый класс, используемый для определенных контекстов событий</summary>
@@ -505,7 +505,7 @@
     <member name="M:Microsoft.Owin.Security.Provider.BaseContext`1.#ctor(Microsoft.Owin.IOwinContext,`0)"></member>
     <member name="P:Microsoft.Owin.Security.Provider.BaseContext`1.Options"></member>
     <member name="P:Microsoft.Owin.Security.Provider.BaseContext`1.OwinContext"></member>
-    <member name="P:Microsoft.Owin.Security.Provider.BaseContext`1.Request"></member>
+    <member name="P:Microsoft.Owin.Security.Provider.BaseContext`1.request"></member>
     <member name="P:Microsoft.Owin.Security.Provider.BaseContext`1.Response"></member>
     <member name="T:Microsoft.Owin.Security.Provider.EndpointContext">
       <summary>Представляет контекст конечной точки.</summary>

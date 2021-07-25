@@ -26,7 +26,7 @@
       <summary>When disposing, actually dipose the store context</summary>
     </member>
     <member name="P:Microsoft.AspNet.Identity.IdentityManager.Logins">
-      <summary>User Login related APIs</summary>
+      <summary>user Login related APIs</summary>
     </member>
     <member name="P:Microsoft.AspNet.Identity.IdentityManager.Passwords">
       <summary>Password API</summary>
@@ -47,7 +47,7 @@
       <summary>Token API</summary>
     </member>
     <member name="P:Microsoft.AspNet.Identity.IdentityManager.Users">
-      <summary>APIs around User management</summary>
+      <summary>APIs around user management</summary>
     </member>
     <member name="T:Microsoft.AspNet.Identity.IdentityOptions">
       <summary>Settings used to configure an IdentityManager</summary>
@@ -422,7 +422,7 @@
       <summary>Update the specified IUserManagement object</summary>
     </member>
     <member name="T:Microsoft.AspNet.Identity.IUserManager">
-      <summary>User related APIs: creating users, adding claims</summary>
+      <summary>user related APIs: creating users, adding claims</summary>
     </member>
     <member name="M:Microsoft.AspNet.Identity.IUserManager.AddClaimAsync(Microsoft.AspNet.Identity.IUserClaim,System.Threading.CancellationToken)">
       <summary>Add a new user claim to the store</summary>
@@ -599,7 +599,7 @@
     <member name="M:Microsoft.AspNet.Identity.TokenManagerExtensions.Remove(Microsoft.AspNet.Identity.ITokenManager,System.String)"></member>
     <member name="M:Microsoft.AspNet.Identity.TokenManagerExtensions.RemoveAsync(Microsoft.AspNet.Identity.ITokenManager,System.String)"></member>
     <member name="T:Microsoft.AspNet.Identity.UserManager">
-      <summary>User related API</summary>
+      <summary>user related API</summary>
     </member>
     <member name="M:Microsoft.AspNet.Identity.UserManager.#ctor(Microsoft.AspNet.Identity.IdentityManager)">
       <summary>Constructor</summary>

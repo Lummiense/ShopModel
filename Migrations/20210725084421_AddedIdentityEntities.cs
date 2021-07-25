@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace Занятие_3.Migrations
+namespace ShopApi.Migrations
 {
     public partial class AddedIdentityEntities : Migration
     {
@@ -48,7 +48,7 @@ namespace Занятие_3.Migrations
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
-                name: "Email",
+                name: "Username",
                 table: "UserEntity",
                 type: "text",
                 nullable: true);
@@ -359,7 +359,7 @@ namespace Занятие_3.Migrations
                 table: "UserEntity");
 
             migrationBuilder.DropColumn(
-                name: "Email",
+                name: "Username",
                 table: "UserEntity");
 
             migrationBuilder.DropColumn(

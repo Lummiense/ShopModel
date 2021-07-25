@@ -101,7 +101,7 @@
       <returns>A collection of unvalidated query-string values.</returns>
     </member>
     <member name="T:System.Web.Helpers.Validation">
-      <summary>Excludes fields of the Request object from being checked for potentially unsafe HTML markup and client script.</summary>
+      <summary>Excludes fields of the request object from being checked for potentially unsafe HTML markup and client script.</summary>
     </member>
     <member name="M:System.Web.Helpers.Validation.Unvalidated(System.Web.HttpRequest)">
       <summary>Returns a version of form values, cookies, and query-string variables without checking them first for HTML markup and client script.</summary>
@@ -115,12 +115,12 @@
       <param name="key">The name of the field to exclude from validation. <paramref name="key" /> can refer to a form field, to a cookie, or to the query-string variable.</param>
     </member>
     <member name="M:System.Web.Helpers.Validation.Unvalidated(System.Web.HttpRequestBase)">
-      <summary>Returns all values from the Request object (including form fields, cookies, and the query string) without checking them first for HTML markup and client script.</summary>
+      <summary>Returns all values from the request object (including form fields, cookies, and the query string) without checking them first for HTML markup and client script.</summary>
       <returns>An object that contains unvalidated versions of the form, cookie, and query-string values.</returns>
       <param name="request">The <see cref="T:System.Web.HttpRequest" /> object that contains values to exclude from validation.</param>
     </member>
     <member name="M:System.Web.Helpers.Validation.Unvalidated(System.Web.HttpRequestBase,System.String)">
-      <summary>Returns the specified value from the Request object without checking it first for HTML markup and client script.</summary>
+      <summary>Returns the specified value from the request object without checking it first for HTML markup and client script.</summary>
       <returns>A string that contains unvalidated text from the specified field, cookie, or query-string value.</returns>
       <param name="request">The <see cref="T:System.Web.HttpRequestBase" /> object that contains values to exclude from validation.</param>
       <param name="key">The name of the field to exclude from validation. <paramref name="key" /> can refer to a form field, to a cookie, or to the query-string variable.</param>
@@ -705,7 +705,7 @@
       <summary>Gets array-like access to page data that is shared between pages, layout pages, and partial pages.</summary>
       <returns>An object that provides array-like access to page data.</returns>
     </member>
-    <member name="P:System.Web.WebPages.HelperPage.Request">
+    <member name="P:System.Web.WebPages.HelperPage.request">
       <summary>Gets the <see cref="T:System.Web.HttpRequest" /> object for the current HTTP request.</summary>
       <returns>An <see cref="T:System.Web.HttpRequest" /> object that contains the HTTP values that were sent by a client during a web request.</returns>
     </member>
@@ -725,7 +725,7 @@
       <summary>Gets data related to the URL path.</summary>
       <returns>Data related to the URL path.</returns>
     </member>
-    <member name="P:System.Web.WebPages.HelperPage.User">
+    <member name="P:System.Web.WebPages.HelperPage.user">
       <summary>Gets a user value based on the HTTP context.</summary>
       <returns>A user value based on the HTTP context.</returns>
     </member>
@@ -1608,14 +1608,14 @@
       <param name="path">The path of the page to render.</param>
       <param name="data">Additional data that is used to render the page.</param>
     </member>
-    <member name="P:System.Web.WebPages.WebPageRenderingBase.Request"></member>
+    <member name="P:System.Web.WebPages.WebPageRenderingBase.request"></member>
     <member name="P:System.Web.WebPages.WebPageRenderingBase.Response"></member>
     <member name="P:System.Web.WebPages.WebPageRenderingBase.Server"></member>
     <member name="P:System.Web.WebPages.WebPageRenderingBase.Session"></member>
     <member name="P:System.Web.WebPages.WebPageRenderingBase.TemplateInfo"></member>
     <member name="P:System.Web.WebPages.WebPageRenderingBase.UICulture"></member>
     <member name="P:System.Web.WebPages.WebPageRenderingBase.UrlData"></member>
-    <member name="P:System.Web.WebPages.WebPageRenderingBase.User"></member>
+    <member name="P:System.Web.WebPages.WebPageRenderingBase.user"></member>
     <member name="T:System.Web.WebPages.Html.HtmlHelper">
       <summary>Provides support for rendering HTML form controls and performing form validation in a web page.</summary>
     </member>

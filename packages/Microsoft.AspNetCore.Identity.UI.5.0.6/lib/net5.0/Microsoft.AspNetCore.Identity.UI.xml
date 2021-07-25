@@ -88,7 +88,7 @@
                 directly from your code. This API may change or be removed in future releases.
             </summary>
         </member>
-        <member name="P:Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal.ExternalLoginModel.InputModel.Email">
+        <member name="P:Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal.ExternalLoginModel.InputModel.Username">
             <summary>
                 This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
                 directly from your code. This API may change or be removed in future releases.
@@ -136,7 +136,7 @@
                 directly from your code. This API may change or be removed in future releases.
             </summary>
         </member>
-        <member name="P:Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal.ForgotPasswordModel.InputModel.Email">
+        <member name="P:Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal.ForgotPasswordModel.InputModel.Username">
             <summary>
                 This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
                 directly from your code. This API may change or be removed in future releases.
@@ -208,7 +208,7 @@
                 directly from your code. This API may change or be removed in future releases.
             </summary>
         </member>
-        <member name="P:Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal.LoginModel.InputModel.Email">
+        <member name="P:Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal.LoginModel.InputModel.Username">
             <summary>
                 This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
                 directly from your code. This API may change or be removed in future releases.
@@ -382,7 +382,7 @@
                 directly from your code. This API may change or be removed in future releases.
             </summary>
         </member>
-        <member name="P:Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal.RegisterModel.InputModel.Email">
+        <member name="P:Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal.RegisterModel.InputModel.Username">
             <summary>
                 This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
                 directly from your code. This API may change or be removed in future releases.
@@ -418,7 +418,7 @@
                 directly from your code. This API may change or be removed in future releases.
             </summary>
         </member>
-        <member name="P:Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal.RegisterConfirmationModel.Email">
+        <member name="P:Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal.RegisterConfirmationModel.Username">
             <summary>
                 This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
                 directly from your code. This API may change or be removed in future releases.
@@ -460,7 +460,7 @@
                 directly from your code. This API may change or be removed in future releases.
             </summary>
         </member>
-        <member name="P:Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal.ResendEmailConfirmationModel.InputModel.Email">
+        <member name="P:Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal.ResendEmailConfirmationModel.InputModel.Username">
             <summary>
                 This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
                 directly from your code. This API may change or be removed in future releases.
@@ -496,7 +496,7 @@
                 directly from your code. This API may change or be removed in future releases.
             </summary>
         </member>
-        <member name="P:Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal.ResetPasswordModel.InputModel.Email">
+        <member name="P:Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal.ResetPasswordModel.InputModel.Username">
             <summary>
                 This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
                 directly from your code. This API may change or be removed in future releases.
@@ -688,7 +688,7 @@
                 directly from your code. This API may change or be removed in future releases.
             </summary>
         </member>
-        <member name="P:Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Manage.Internal.EmailModel.Email">
+        <member name="P:Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Manage.Internal.EmailModel.Username">
             <summary>
                 This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
                 directly from your code. This API may change or be removed in future releases.
@@ -946,7 +946,7 @@
                 directly from your code. This API may change or be removed in future releases.
             </summary>
         </member>
-        <member name="P:Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Manage.Internal.ManageNavPages.Email">
+        <member name="P:Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Manage.Internal.ManageNavPages.Username">
             <summary>
                 This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
                 directly from your code. This API may change or be removed in future releases.

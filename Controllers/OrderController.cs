@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Занятие_3.Entities;
-using Занятие_3.Model;
-using Занятие_3.Service;
 using AutoMapper;
+using ShopApi.Entities;
+using ShopApi.Model;
+using ShopApi.Service;
 
 
-namespace Занятие_3.Controllers
+namespace ShopApi.Controllers
 {
     
     [Route("order")]
