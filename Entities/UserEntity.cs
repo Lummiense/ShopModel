@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace Занятие_3.Entities
         [Column(TypeName = "uuid")]
         public Guid Id { get; set; }
         public bool IsActive { get; set; }
+        public string Login { get; set; }
         public string Name { get; set; }
         public uint Age { get; set; }        
         public int PhoneNumber { get; set; }
@@ -23,8 +25,8 @@ namespace Занятие_3.Entities
         /// Любимый магазин. 
         /// </summary>
         public ShopEntity FavoriteShop { get; set; }//Будет выставлен автоматически по колличеству заказов. Виден и пользователю, и администратору.
-
-
+        [JsonIgnore]
+        public string Password { get; set; }
 
 
 

@@ -11,6 +11,7 @@ namespace Занятие_3
         {
             CreateMap<UserEntity, Buyer>()
                 .ForMember(dest => dest.Login, source => source.MapFrom(src => src.Id));
+            
         }
     }
 }

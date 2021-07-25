@@ -49,6 +49,9 @@ namespace Занятие_3
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IShopService, ShopService>();
             services.AddAutoMapper(typeof(Startup));
+            services.AddIdentity<IdentityUser,IdentityRole>()
+                .AddEntityFrameworkStores<DataContext>()
+                .AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,6 +73,7 @@ namespace Занятие_3
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseSwagger();
             app.UseSwaggerUI(x =>

@@ -26,6 +26,12 @@ namespace Занятие_3.Repository
             return _context.Set<T>().Where(x=>x.IsActive).AsQueryable();
         }
 
+        public List<T> GetAll<T>() where T : class,IEntity
+        {
+            return _context.Set<T>().ToList();
+        }
+
+
         /// <summary>
         /// Добавляем новый экземпляр класса в базу данных
         /// </summary>

@@ -1,8 +1,11 @@
-﻿using System;
+﻿using AutoMapper;
+using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Занятие_3.Entities;
+using Занятие_3.Model;
 using Занятие_3.Repository;
 
 namespace Занятие_3.Service
@@ -11,9 +14,52 @@ namespace Занятие_3.Service
     public class UserService : IUserService
     {
         private readonly IDbRepository _dbRepository;
-        public UserService(IDbRepository dbRepository)
+        private readonly IConfiguration _configuration;
+        private readonly IMapper _mapper;
+        public UserService(IDbRepository dbRepository, IConfiguration configuration, IMapper mapper)
         {
             _dbRepository = dbRepository;
+            _configuration = configuration;
+            _mapper = mapper;
+        }
+        /// <summary>
+        /// Аутентификация зарегистрированого пользователя.
+        /// </summary>
+        /// <param name="Request"></param>
+        /// <returns></returns>
+        public AuthenticationResponse Authentication(AuthenticationRequest Request)
+        {
+            //  var _user = _dbRepository.GetAll<UserEntity>()
+            //      .FirstOrDefault(x => x.Login == Request.Username && x.Password == Request.Password);
+
+            //  if (_user == null)
+            //  {
+            //      throw new ArgumentNullException("Такого пользователя не существует");
+            //  }
+            //  //Добавить генерацию токена
+            //// var token = _configuration.
+            return null;    
+        }
+        /// <summary>
+        /// Регистрация нового пользователя.
+        /// </summary>
+        /// <param name="buyer"></param>
+        /// <returns></returns>
+        public async Task<AuthenticationResponse> Registration(Buyer buyer)
+        {
+            var _buyer = _mapper.Map<UserEntity>(buyer);
+            var AddBuyer =await _dbRepository.Add(_buyer);
+            var Response = Authentication(new AuthenticationRequest
+            {
+                Username = _buyer.Login,
+                Password = _buyer.Password
+            });
+            return Response;
+        }
+
+        public IEnumerable<UserEntity> GetAll()
+        {
+            return _dbRepository.GetAll<UserEntity>();
         }
         public async Task<Guid> Add(UserEntity user)
         {
@@ -52,6 +98,8 @@ namespace Занятие_3.Service
             await _dbRepository.Delete<UserEntity>(id);
             await _dbRepository.SaveChangesAsync();
         }
+
+        
 
 
         #region Реализация без паттерна Репозиторий.
