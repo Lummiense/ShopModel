@@ -9,9 +9,13 @@ namespace Занятие_3
     {
         public UserProfile()
         {
-            CreateMap<UserEntity, Buyer>()
-                .ForMember(dest => dest.Login, source => source.MapFrom(src => src.Id));
+            CreateMap<UserEntity, Buyer>().ReverseMap()
+                .ForMember(dest => dest.Id, source => source.MapFrom(src => src.Id));
             
+
+
+
+
         }
     }
 }

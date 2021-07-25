@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K4LJfRMf82OalAxdITOZzjJM6vrSWW1hxKQ4HM4DUz/DeLrQtviRj+gBN4vqd/teVmUJmnnJ9lZwZ9kftdUyFQ==",
+  "dgSpecHash": "RdhYogl1SJlmxj/y31qyDhqm+JO8wWYKmd4CBd8bcWTx1geKZihbMnwhgXiYZX7YbEPeTqZ/ZIpxNMiEvGGDkQ==",
   "success": true,
-  "projectFilePath": "C:\\Work\\edu\\C#\\Занятие3\\Занятие_3\\Занятие_3.csproj",
+  "projectFilePath": "C:\\Work\\edu\\C#\\ShopModel\\Занятие_3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lummiense\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Lummiense\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

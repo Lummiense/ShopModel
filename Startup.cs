@@ -51,7 +51,15 @@ namespace Занятие_3
             services.AddAutoMapper(typeof(Startup));
             services.AddIdentity<IdentityUser,IdentityRole>()
                 .AddEntityFrameworkStores<DataContext>()
-                .AddDefaultTokenProviders();
+                .AddDefaultTokenProviders()
+                .AddSignInManager();
+            //services.AddAuthentication(o =>
+            //{
+            //    o.DefaultScheme = IdentityConstants.ApplicationScheme;
+            //    o.DefaultSignInScheme = IdentityConstants.ExternalScheme;
+            //})
+            //.AddIdentityCookies(o => { });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,13 +76,11 @@ namespace Занятие_3
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
-
-            app.UseAuthorization();
             app.UseAuthentication();
-
+            app.UseAuthorization();
             app.UseSwagger();
             app.UseSwaggerUI(x =>
             {

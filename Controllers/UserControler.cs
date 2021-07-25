@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -20,18 +21,16 @@ namespace Занятие_3.Controllers
         private readonly IMapper _mapper;
         private IUserService _userService;
 
-        public UserControler(IMapper mapper)
+        public UserControler(IMapper mapper, IUserService _user)
         {
             _mapper = mapper;
+            _userService = _user;
         }
 
-        public UserControler(IUserService _User)
-        {
-            _userService = _User;
-        }
-        
+       
+        [Authorize]
         [HttpGet("{id}")]
-        //TODO: Передать в качестве типа данных модель пользователя после мапинга
+        //TODO: Передать в качестве типа данных модель пользователя после мапинга       
         public ActionResult<UserEntity> Get(Guid id)
         {
        //     id = Guid.Empty;
@@ -44,7 +43,7 @@ namespace Занятие_3.Controllers
             var _userDTO = _mapper.Map<Buyer>(_user);
             return Ok(_userDTO);
         }
-        
+        [Authorize]
         [HttpPost("create")]
         public async Task<ActionResult<UserEntity>> Add(Buyer buyer)
         {

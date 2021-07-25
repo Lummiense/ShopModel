@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Work\\edu\\C#\\Занятие3\\Занятие_3\\Занятие_3.csproj": {}
+    "C:\\Work\\edu\\C#\\ShopModel\\Занятие_3.csproj": {}
   },
   "projects": {
-    "C:\\Work\\edu\\C#\\Занятие3\\Занятие_3\\Занятие_3.csproj": {
+    "C:\\Work\\edu\\C#\\ShopModel\\Занятие_3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Work\\edu\\C#\\Занятие3\\Занятие_3\\Занятие_3.csproj",
+        "projectUniqueName": "C:\\Work\\edu\\C#\\ShopModel\\Занятие_3.csproj",
         "projectName": "Занятие_3",
-        "projectPath": "C:\\Work\\edu\\C#\\Занятие3\\Занятие_3\\Занятие_3.csproj",
+        "projectPath": "C:\\Work\\edu\\C#\\ShopModel\\Занятие_3.csproj",
         "packagesPath": "C:\\Users\\Lummiense\\.nuget\\packages\\",
-        "outputPath": "C:\\Work\\edu\\C#\\Занятие3\\Занятие_3\\obj\\",
+        "outputPath": "C:\\Work\\edu\\C#\\ShopModel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
