@@ -52,7 +52,7 @@ namespace Занятие_3.Service
             var Response = Authentication(new AuthenticationRequest
             {
                 Username = _buyer.Login,
-                Password = _buyer.Password
+                //Password = _buyer.Password
             });
             return Response;
         }
