@@ -16,7 +16,7 @@ namespace Занятие_3.Service
             _dbRepository = dbRepository;
         }
 
-        public async Task<Guid> Add(ShopEntity shop)
+        public async Task<uint> Add(ShopEntity shop)
         {
             var result = await _dbRepository.Add(shop); // Добавляем в базу данных экземпляр модели Shop.
             #region ShopExtension
@@ -33,12 +33,12 @@ namespace Занятие_3.Service
             return result;
         }
 
-        public ShopEntity Get(Guid id)
+        public ShopEntity Get(uint id)
         {
             var entity = _dbRepository.Get<ShopEntity>().FirstOrDefault(x => x.Id == id); //По полученному из запроса Id находим запись в БД с идентичным Id
             return entity;
         }
-        public async Task Delete(Guid id)
+        public async Task Delete(uint id)
         {
             await _dbRepository.Delete<ShopEntity>(id); //Убираем из всех будущих подборок экземпляр с Id, полученным из запроса.
             await _dbRepository.SaveChangesAsync();
@@ -46,7 +46,7 @@ namespace Занятие_3.Service
 
         
 
-        public async Task<Guid> Update(ShopEntity shop)
+        public async Task<uint> Update(ShopEntity shop)
         {
             await _dbRepository.Update<ShopEntity>(shop); //Обновляем запись в БД
             await _dbRepository.SaveChangesAsync();

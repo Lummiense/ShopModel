@@ -8,7 +8,9 @@ namespace Занятие_3.Model
     public class ShopForBuyers
     {
         public string Name { get; set; }
-        public uint OrderCount { get; set; }
+        /// <summary>
+        /// Total order count delivered to buyers from this shop.
+        /// </summary>
         public uint DeliveredOrderCount { get; set; }
     }
 }

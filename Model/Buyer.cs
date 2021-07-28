@@ -7,7 +7,7 @@ namespace Занятие_3.Model
 {
     public class Buyer
     {
-        public Guid Id { get; set; }
+        public uint Id { get; set; }
         public string Login { get; set; }
         public string Name { get; set; }
         public uint Age { get; set; }

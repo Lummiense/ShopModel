@@ -8,10 +8,10 @@ namespace Занятие_3.Service
 {
     public interface IShopService
     {
-        Task<Guid> Add(ShopEntity shop);
-        ShopEntity Get(Guid id);
-        Task<Guid> Update(ShopEntity shop);
-        Task Delete(Guid id);
+        Task<uint> Add(ShopEntity shop);
+        ShopEntity Get(uint id);
+        Task<uint> Update(ShopEntity shop);
+        Task Delete(uint id);
         #region Реализация без паттерна Репозиторий.
         // int GetShopId(int id);
         //Task<string> SetShopName(ShopModel shop);

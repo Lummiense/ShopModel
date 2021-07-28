@@ -11,21 +11,23 @@ using Занятие_3.Model;
 
 namespace Занятие_3.Controllers
 {
+    [Route("account")]
+    [ApiController]
     [Authorize]
-    public class AccountController : Controller
+    public class Account : Controller
     {
         private readonly UserManager<UserEntity> _userManager;
         private readonly SignInManager<UserEntity> _signInManager;
         private readonly ILogger _logger;
 
-        public AccountController(
+        public Account(
             UserManager<UserEntity> userManager,
             SignInManager<UserEntity> signInManager,         
             ILoggerFactory loggerFactory)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _logger = loggerFactory.CreateLogger<AccountController>();
+            _logger = loggerFactory.CreateLogger<Account>();
         }
         
         //

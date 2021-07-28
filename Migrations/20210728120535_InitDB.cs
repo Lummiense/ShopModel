@@ -4,118 +4,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Занятие_3.Migrations
 {
-    public partial class AddedIdentityEntities : Migration
+    public partial class InitDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Orders_Users_UserId",
-                table: "Orders");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_Users_Shops_FavoriteShopId",
-                table: "Users");
-
-            migrationBuilder.DropPrimaryKey(
-                name: "PK_Users",
-                table: "Users");
-
-            migrationBuilder.RenameTable(
-                name: "Users",
-                newName: "UserEntity");
-
-            migrationBuilder.RenameColumn(
-                name: "Password",
-                table: "UserEntity",
-                newName: "UserName");
-
-            migrationBuilder.RenameIndex(
-                name: "IX_Users_FavoriteShopId",
-                table: "UserEntity",
-                newName: "IX_UserEntity_FavoriteShopId");
-
-            migrationBuilder.AddColumn<int>(
-                name: "AccessFailedCount",
-                table: "UserEntity",
-                type: "integer",
-                nullable: false,
-                defaultValue: 0);
-
-            migrationBuilder.AddColumn<string>(
-                name: "ConcurrencyStamp",
-                table: "UserEntity",
-                type: "text",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "Email",
-                table: "UserEntity",
-                type: "text",
-                nullable: true);
-
-            migrationBuilder.AddColumn<bool>(
-                name: "EmailConfirmed",
-                table: "UserEntity",
-                type: "boolean",
-                nullable: false,
-                defaultValue: false);
-
-            migrationBuilder.AddColumn<bool>(
-                name: "LockoutEnabled",
-                table: "UserEntity",
-                type: "boolean",
-                nullable: false,
-                defaultValue: false);
-
-            migrationBuilder.AddColumn<DateTimeOffset>(
-                name: "LockoutEnd",
-                table: "UserEntity",
-                type: "timestamp with time zone",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "NormalizedEmail",
-                table: "UserEntity",
-                type: "text",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "NormalizedUserName",
-                table: "UserEntity",
-                type: "text",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "PasswordHash",
-                table: "UserEntity",
-                type: "text",
-                nullable: true);
-
-            migrationBuilder.AddColumn<bool>(
-                name: "PhoneNumberConfirmed",
-                table: "UserEntity",
-                type: "boolean",
-                nullable: false,
-                defaultValue: false);
-
-            migrationBuilder.AddColumn<string>(
-                name: "SecurityStamp",
-                table: "UserEntity",
-                type: "text",
-                nullable: true);
-
-            migrationBuilder.AddColumn<bool>(
-                name: "TwoFactorEnabled",
-                table: "UserEntity",
-                type: "boolean",
-                nullable: false,
-                defaultValue: false);
-
-            migrationBuilder.AddPrimaryKey(
-                name: "PK_UserEntity",
-                table: "UserEntity",
-                column: "Id");
-
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -153,6 +45,62 @@ namespace Занятие_3.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProductCategoryEntity",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false),
+                    IsActive = table.Column<bool>(type: "boolean", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductCategoryEntity", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Shops",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: true),
+                    IsActive = table.Column<bool>(type: "boolean", nullable: false),
+                    DeliveredOrderCount = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Shops", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false),
+                    IsActive = table.Column<bool>(type: "boolean", nullable: false),
+                    Login = table.Column<string>(type: "text", nullable: true),
+                    Name = table.Column<string>(type: "text", nullable: true),
+                    Age = table.Column<long>(type: "bigint", nullable: false),
+                    RecievedOrderCount = table.Column<long>(type: "bigint", nullable: false),
+                    UserName = table.Column<string>(type: "text", nullable: true),
+                    NormalizedUserName = table.Column<string>(type: "text", nullable: true),
+                    Email = table.Column<string>(type: "text", nullable: true),
+                    NormalizedEmail = table.Column<string>(type: "text", nullable: true),
+                    EmailConfirmed = table.Column<bool>(type: "boolean", nullable: false),
+                    PasswordHash = table.Column<string>(type: "text", nullable: true),
+                    SecurityStamp = table.Column<string>(type: "text", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "text", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "text", nullable: true),
+                    PhoneNumberConfirmed = table.Column<bool>(type: "boolean", nullable: false),
+                    TwoFactorEnabled = table.Column<bool>(type: "boolean", nullable: false),
+                    LockoutEnd = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
+                    LockoutEnabled = table.Column<bool>(type: "boolean", nullable: false),
+                    AccessFailedCount = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -261,6 +209,60 @@ namespace Занятие_3.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false),
+                    IsActive = table.Column<bool>(type: "boolean", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: true),
+                    Price = table.Column<decimal>(type: "numeric", nullable: false),
+                    ProductionDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    Availability = table.Column<bool>(type: "boolean", nullable: false),
+                    Manufacturer = table.Column<string>(type: "text", nullable: true),
+                    ProductCategoryId = table.Column<long>(type: "bigint", nullable: true),
+                    ProductPicture = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Products_ProductCategoryEntity_ProductCategoryId",
+                        column: x => x.ProductCategoryId,
+                        principalTable: "ProductCategoryEntity",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Orders",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false),
+                    IsActive = table.Column<bool>(type: "boolean", nullable: false),
+                    UserId = table.Column<long>(type: "bigint", nullable: true),
+                    ShopId = table.Column<long>(type: "bigint", nullable: true),
+                    TotalPrice = table.Column<decimal>(type: "numeric", nullable: false),
+                    OrderCount = table.Column<long>(type: "bigint", nullable: false),
+                    OrderStatus = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Orders", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Orders_Shops_ShopId",
+                        column: x => x.ShopId,
+                        principalTable: "Shops",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Orders_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -298,33 +300,24 @@ namespace Занятие_3.Migrations
                 column: "NormalizedUserName",
                 unique: true);
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_Orders_UserEntity_UserId",
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_ShopId",
                 table: "Orders",
-                column: "UserId",
-                principalTable: "UserEntity",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
+                column: "ShopId");
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_UserEntity_Shops_FavoriteShopId",
-                table: "UserEntity",
-                column: "FavoriteShopId",
-                principalTable: "Shops",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_UserId",
+                table: "Orders",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_ProductCategoryId",
+                table: "Products",
+                column: "ProductCategoryId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Orders_UserEntity_UserId",
-                table: "Orders");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_UserEntity_Shops_FavoriteShopId",
-                table: "UserEntity");
-
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
@@ -341,97 +334,25 @@ namespace Занятие_3.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Orders");
+
+            migrationBuilder.DropTable(
+                name: "Products");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
 
-            migrationBuilder.DropPrimaryKey(
-                name: "PK_UserEntity",
-                table: "UserEntity");
+            migrationBuilder.DropTable(
+                name: "Shops");
 
-            migrationBuilder.DropColumn(
-                name: "AccessFailedCount",
-                table: "UserEntity");
+            migrationBuilder.DropTable(
+                name: "Users");
 
-            migrationBuilder.DropColumn(
-                name: "ConcurrencyStamp",
-                table: "UserEntity");
-
-            migrationBuilder.DropColumn(
-                name: "Email",
-                table: "UserEntity");
-
-            migrationBuilder.DropColumn(
-                name: "EmailConfirmed",
-                table: "UserEntity");
-
-            migrationBuilder.DropColumn(
-                name: "LockoutEnabled",
-                table: "UserEntity");
-
-            migrationBuilder.DropColumn(
-                name: "LockoutEnd",
-                table: "UserEntity");
-
-            migrationBuilder.DropColumn(
-                name: "NormalizedEmail",
-                table: "UserEntity");
-
-            migrationBuilder.DropColumn(
-                name: "NormalizedUserName",
-                table: "UserEntity");
-
-            migrationBuilder.DropColumn(
-                name: "PasswordHash",
-                table: "UserEntity");
-
-            migrationBuilder.DropColumn(
-                name: "PhoneNumberConfirmed",
-                table: "UserEntity");
-
-            migrationBuilder.DropColumn(
-                name: "SecurityStamp",
-                table: "UserEntity");
-
-            migrationBuilder.DropColumn(
-                name: "TwoFactorEnabled",
-                table: "UserEntity");
-
-            migrationBuilder.RenameTable(
-                name: "UserEntity",
-                newName: "Users");
-
-            migrationBuilder.RenameColumn(
-                name: "UserName",
-                table: "Users",
-                newName: "Password");
-
-            migrationBuilder.RenameIndex(
-                name: "IX_UserEntity_FavoriteShopId",
-                table: "Users",
-                newName: "IX_Users_FavoriteShopId");
-
-            migrationBuilder.AddPrimaryKey(
-                name: "PK_Users",
-                table: "Users",
-                column: "Id");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Orders_Users_UserId",
-                table: "Orders",
-                column: "UserId",
-                principalTable: "Users",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Users_Shops_FavoriteShopId",
-                table: "Users",
-                column: "FavoriteShopId",
-                principalTable: "Shops",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
+            migrationBuilder.DropTable(
+                name: "ProductCategoryEntity");
         }
     }
 }

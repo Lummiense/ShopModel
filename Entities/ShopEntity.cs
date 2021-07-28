@@ -8,17 +8,13 @@ namespace Занятие_3.Entities
 {
     public class ShopEntity : IEntity
     {
-        //TODO: сделать maper из сущности в модель контроллера
+        
         public string Name { get; set; }
-        [Column(TypeName = "uuid")]
-        public Guid Id { get; set; }
+        
+        public uint Id { get; set; }
         public bool IsActive { get; set; }
         /// <summary>
-        /// Колличество заказов у данного продавца.
-        /// </summary>
-        public uint OrderCount { get; set; }
-        /// <summary>
-        /// Успешно доставленные заказы.
+        /// Total order count delivered to buyers from this shop.
         /// </summary>
         public uint DeliveredOrderCount { get; set; }
     }

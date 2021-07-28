@@ -9,7 +9,7 @@ namespace Занятие_3.Profiles
     {
        public ShopForBuyersProfile()
         {
-            CreateMap<ShopEntity, ShopForBuyers>();
+            CreateMap<ShopEntity, ShopForBuyers>().ReverseMap();
         }
     }
 }

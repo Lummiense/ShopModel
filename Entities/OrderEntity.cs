@@ -7,53 +7,33 @@ namespace Занятие_3.Entities
 {
     public class OrderEntity : IEntity
     {
+        public bool IsActive { get; set;}
         /// <summary>
-        /// Номер заказа.
+        /// Order ID.
         /// </summary>
-        public Guid Id { get; set; }
+        public uint Id { get; set; }
         /// <summary>
-        /// Покупатель, который оформляет заказ.
+        /// Buyer.
         /// </summary>
         public UserEntity User { get; set; }
-        private ProductEntity _product;
+
         /// <summary>
-        /// Товар, который добавляется в корзину.
+        /// List of products in buyer cart.
         /// </summary>        
-        public List <ProductEntity> ProductCart
-        {
-            set
-            {
-                ProductCart.Add(_product);
-            }
-            get
-            {
-                return ProductCart;
-            }
-        }
-        /// <summary>
-        /// Продавец, которому принадлежит товар.
-        /// </summary>
-        public ShopEntity Shop { get; set; }
-        private decimal _totalPrice;
-        /// <summary>
-        /// Сумма заказа.
-        /// </summary>        
-        public decimal TotalPrice 
-        {           
-            set
-            {
-                _totalPrice += _product.Price;
-            }
-            get
-            {
-                return _totalPrice;
-            }
-        }
+        public List<ProductEntity> ProductCart = new List<ProductEntity>();
         
         /// <summary>
-        /// Статус заказа.
+        /// Product dealer.
         /// </summary>
+        public ShopEntity Shop { get; set; }
+        public decimal TotalPrice { get; set; }
+        /// <summary>
+        /// Total order amount.
+        /// </summary>
+        public  uint OrderCount { get; set; }
+
+        public string[] OrderStatusVariation = {"Created", "Paid", "Delivered"};
         public string OrderStatus { get; set; }
-        public bool IsActive { get; set;}
+       
     }
 }

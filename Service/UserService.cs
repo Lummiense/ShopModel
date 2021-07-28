@@ -61,7 +61,7 @@ namespace Занятие_3.Service
         {
             return _dbRepository.GetAll<UserEntity>();
         }
-        public async Task<Guid> Add(UserEntity user)
+        public async Task<uint> Add(UserEntity user)
         {
             var result =await _dbRepository.Add(user) ;
             #region UserException
@@ -79,13 +79,13 @@ namespace Занятие_3.Service
             return result;
         }
 
-        public UserEntity Get(Guid id)
+        public UserEntity Get(uint id)
         {
             var entity = _dbRepository.Get<UserEntity>().FirstOrDefault(x => x.Id == id);
             return entity;
         }
 
-        public async Task<Guid> Update(UserEntity user)
+        public async Task<uint> Update(UserEntity user)
         {
             await _dbRepository.Update<UserEntity>(user);
             await _dbRepository.SaveChangesAsync();
@@ -93,7 +93,7 @@ namespace Занятие_3.Service
             return user.Id;
         }
 
-        public async Task Delete(Guid id)
+        public async Task Delete(uint id)
         {
             await _dbRepository.Delete<UserEntity>(id);
             await _dbRepository.SaveChangesAsync();

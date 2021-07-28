@@ -9,7 +9,7 @@ namespace Занятие_3.Model
     public class AuthenticationResponse
     {
         
-        public Guid Id { get; set; }
+        public uint Id { get; set; }
         public string Login { get; set; }
         public string Name { get; set; }
         public uint Age { get; set; }
@@ -21,7 +21,6 @@ namespace Занятие_3.Model
             Login = User.Login;
             Name = User.Name;
             Age = User.Age;
-            PhoneNumber = User.PhoneNumber;
             Token = token;
         }
     }

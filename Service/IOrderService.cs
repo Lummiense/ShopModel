@@ -9,9 +9,12 @@ namespace Занятие_3.Service
 {
     public interface IOrderService
     {
-        OrderEntity Get(Guid id);
-        Task<Guid> Add(OrderEntity order);        
-        Task<Guid> Update(OrderEntity order);
-        Task Delete(Guid id);
+        OrderEntity Get(uint id);
+        Task<uint> Add(OrderEntity order);        
+        Task<uint> Update(OrderEntity order);
+        Task Delete(uint id);
+        
+        
+
     }
 }

@@ -28,12 +28,12 @@ namespace Занятие_3.Controllers
         }
 
        
-        [Authorize]
+        //[Authorize]
         [HttpGet("{id}")]
         //TODO: Передать в качестве типа данных модель пользователя после мапинга       
-        public ActionResult<UserEntity> Get(Guid id)
+        public ActionResult<UserEntity> Get(uint id)
         {
-       //     id = Guid.Empty;
+       //     id = uint.Empty;
             var _user = _userService.Get(id);
 
             if (_user == null)
@@ -43,32 +43,34 @@ namespace Занятие_3.Controllers
             var _userDTO = _mapper.Map<Buyer>(_user);
             return Ok(_userDTO);
         }
-        [Authorize]
+        //[Authorize]
         [HttpPost("create")]
-        public async Task<ActionResult<UserEntity>> Add(Buyer buyer)
+        public async Task<ActionResult<UserEntity>> Add(UserEntity user)
         {
-            var _userDTO = _mapper.Map<UserEntity>(buyer);
-            var result = await _userService.Add(_userDTO);
+            
+            var result = await _userService.Add(user);
 
             return Ok(result);
         }
 
         [HttpPut]
-        public async Task<ActionResult> Update(Buyer buyer)
+        public async Task<ActionResult> Update(UserEntity user)
         {
-            var _userDTO = _mapper.Map<UserEntity>(buyer);
-            var result = await _userService.Update(_userDTO);
-
-            if (result == Guid.Empty)
+            
+            
+            if (user.Id <0)
             {
-                return BadRequest("user not updated");
+                return BadRequest("Id must be positive");
             }
+            var result = await _userService.Update(user);
+
+            
 
             return Ok(result);
         }
 
         [HttpDelete("delete/id")]
-        public async Task<ActionResult> Delete(Guid id)
+        public async Task<ActionResult> Delete(uint id)
         {
             await _userService.Delete(id);
 

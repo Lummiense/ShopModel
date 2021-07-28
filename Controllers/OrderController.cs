@@ -26,7 +26,7 @@ namespace Занятие_3.Controllers
        
 
         [HttpGet("{id}")]
-        public ActionResult<OrderEntity> Get(Guid id)
+        public ActionResult<OrderEntity> Get(uint id)
         {
             
             var _order = _orderService.Get(id);
@@ -50,18 +50,19 @@ namespace Занятие_3.Controllers
         public async Task<ActionResult> Update(Cart cart)
         {
             var _cartDTO = _mapper.Map<OrderEntity>(cart);
-            var result = await _orderService.Update(_cartDTO);
-
-            if (result == Guid.Empty)
+            if (_cartDTO.Id==null)
             {
                 return BadRequest("Order not updated");
             }
+            var result = await _orderService.Update(_cartDTO);
+
+            
 
             return Ok(result);
         }
 
         [HttpDelete("delete/id")]
-        public async Task<ActionResult> Delete(Guid id)
+        public async Task<ActionResult> Delete(uint id)
         {
             await _orderService.Delete(id);
 

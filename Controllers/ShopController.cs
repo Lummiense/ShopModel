@@ -25,44 +25,45 @@ namespace Занятие_3.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<ShopEntity> Get(Guid id)
+        public ActionResult<ShopEntity> Get(uint id)
         {
-            var _shop = _shopService.Get(id);
+            var shop = _shopService.Get(id);
 
-            if (_shop == null)
+            if (shop == null)
             {
                 return BadRequest("Shop was not found");
             }
-            var _shopDTO = _mapper.Map<ShopForBuyers>(_shop);
+            var _shopDTO = _mapper.Map<ShopForBuyers>(shop);
 
             return Ok(_shopDTO);
         }
 
         [HttpPost("create")]
-        public async Task<ActionResult<ShopEntity>> Add(ShopForBuyers _shop)
+        public async Task<ActionResult<ShopEntity>> Add(ShopEntity shop)
         {
-            var _shopDTO = _mapper.Map<ShopEntity>(_shop);
-            var result = await _shopService.Add(_shopDTO);
+            
+            var result = await _shopService.Add(shop);
 
             return Ok(result);
         }
 
         [HttpPut]
-        public async Task<ActionResult> Update(ShopForBuyers _shop)
+        public async Task<ActionResult> Update(ShopEntity shop)
         {
-            var _shopDTO = _mapper.Map<ShopEntity>(_shop);
-            var result = await _shopService.Update(_shopDTO);
-
-            if (result == Guid.Empty)
+            
+            if (shop.Id <0 )
             {
-                return BadRequest("Shop not updated");
+                return BadRequest("Id must be positive");
             }
+            var result = await _shopService.Update(shop);
+
+            
 
             return Ok(result);
         }
 
         [HttpDelete("delete/id")]
-        public async Task<ActionResult> Delete(Guid id)
+        public async Task<ActionResult> Delete(uint id)
         {
             await _shopService.Delete(id);
 

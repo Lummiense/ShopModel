@@ -7,12 +7,11 @@ using Занятие_3.Entities;
 namespace Занятие_3.Service
 {
     public interface IProductService
-
     {
-        Task<Guid> Add(ProductEntity product);
-        ProductEntity Get(Guid id);
-        Task<Guid> Update(ProductEntity product);
-        Task Delete(Guid id);
+        Task<uint> Add(ProductEntity product);
+        ProductEntity Get(uint id);
+        Task<uint> Update(ProductEntity product);
+        Task Delete(uint id);
         #region Реализация без использования паттерна Репозиторий.
         //public int GetProductId(int id); 
         #endregion

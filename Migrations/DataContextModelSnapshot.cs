@@ -215,24 +215,28 @@ namespace Занятие_3.Migrations
 
             modelBuilder.Entity("Занятие_3.Entities.OrderEntity", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("bigint")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.None);
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
 
+                    b.Property<long>("OrderCount")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("OrderStatus")
                         .HasColumnType("text");
 
-                    b.Property<Guid?>("ShopId")
-                        .HasColumnType("uuid");
+                    b.Property<long?>("ShopId")
+                        .HasColumnType("bigint");
 
                     b.Property<decimal>("TotalPrice")
                         .HasColumnType("numeric");
 
-                    b.Property<Guid?>("UserId")
-                        .HasColumnType("uuid");
+                    b.Property<long?>("UserId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
@@ -243,11 +247,27 @@ namespace Занятие_3.Migrations
                     b.ToTable("Orders");
                 });
 
+            modelBuilder.Entity("Занятие_3.Entities.ProductCategoryEntity", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.None);
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProductCategoryEntity");
+                });
+
             modelBuilder.Entity("Занятие_3.Entities.ProductEntity", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("bigint")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.None);
 
                     b.Property<bool>("Availability")
                         .HasColumnType("boolean");
@@ -255,17 +275,17 @@ namespace Занятие_3.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Manufacturer")
                         .HasColumnType("text");
 
-                    b.Property<Guid?>("OrderEntityId")
-                        .HasColumnType("uuid");
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
 
-                    b.Property<string>("Producer")
-                        .HasColumnType("text");
+                    b.Property<long?>("ProductCategoryId")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("ProductPicture")
                         .HasColumnType("text");
@@ -275,16 +295,17 @@ namespace Занятие_3.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OrderEntityId");
+                    b.HasIndex("ProductCategoryId");
 
                     b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Занятие_3.Entities.ShopEntity", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("bigint")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.None);
 
                     b.Property<long>("DeliveredOrderCount")
                         .HasColumnType("bigint");
@@ -295,9 +316,6 @@ namespace Занятие_3.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<long>("OrderCount")
-                        .HasColumnType("bigint");
-
                     b.HasKey("Id");
 
                     b.ToTable("Shops");
@@ -305,9 +323,10 @@ namespace Занятие_3.Migrations
 
             modelBuilder.Entity("Занятие_3.Entities.UserEntity", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("bigint")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.None);
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("integer");
@@ -323,9 +342,6 @@ namespace Занятие_3.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("boolean");
-
-                    b.Property<Guid?>("FavoriteShopId")
-                        .HasColumnType("uuid");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
@@ -348,17 +364,17 @@ namespace Занятие_3.Migrations
                     b.Property<string>("NormalizedUserName")
                         .HasColumnType("text");
 
-                    b.Property<long>("OrderCount")
-                        .HasColumnType("bigint");
-
                     b.Property<string>("PasswordHash")
                         .HasColumnType("text");
 
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("integer");
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("text");
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("boolean");
+
+                    b.Property<long>("RecievedOrderCount")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("text");
@@ -371,9 +387,7 @@ namespace Занятие_3.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FavoriteShopId");
-
-                    b.ToTable("UserEntity");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -444,23 +458,11 @@ namespace Занятие_3.Migrations
 
             modelBuilder.Entity("Занятие_3.Entities.ProductEntity", b =>
                 {
-                    b.HasOne("Занятие_3.Entities.OrderEntity", null)
-                        .WithMany("ProductCart")
-                        .HasForeignKey("OrderEntityId");
-                });
-
-            modelBuilder.Entity("Занятие_3.Entities.UserEntity", b =>
-                {
-                    b.HasOne("Занятие_3.Entities.ShopEntity", "FavoriteShop")
+                    b.HasOne("Занятие_3.Entities.ProductCategoryEntity", "ProductCategory")
                         .WithMany()
-                        .HasForeignKey("FavoriteShopId");
+                        .HasForeignKey("ProductCategoryId");
 
-                    b.Navigation("FavoriteShop");
-                });
-
-            modelBuilder.Entity("Занятие_3.Entities.OrderEntity", b =>
-                {
-                    b.Navigation("ProductCart");
+                    b.Navigation("ProductCategory");
                 });
 #pragma warning restore 612, 618
         }

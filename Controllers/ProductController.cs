@@ -25,43 +25,44 @@ namespace Занятие_3.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<ProductEntity> Get(Guid id)
+        public ActionResult<ProductEntity> Get(uint id)
         {
-            var _product = _productService.Get(id);
+            var product = _productService.Get(id);
 
-            if (_product == null)
+            if (product == null)
             {
                 return BadRequest("Product was not found");
             }
-            var _productDTO = _mapper.Map<ProductForBuyer>(_product);
+            var _productDTO = _mapper.Map<ProductForBuyer>(product);
             return Ok(_productDTO);
         }
 
         [HttpPost("create")]
-        public async Task<ActionResult<ProductEntity>> Add(ProductForBuyer _product)
+        public async Task<ActionResult<ProductEntity>> Add(ProductEntity product)
         {
-            var _productDTO = _mapper.Map<ProductEntity>(_product);
-            var result = await _productService.Add(_productDTO);
+            
+            var result = await _productService.Add(product);
 
             return Ok(result);
         }
 
         [HttpPut]
-        public async Task<ActionResult> Update(ProductForBuyer _product)
+        public async Task<ActionResult> Update(ProductEntity product)
         {
-            var _productDTO = _mapper.Map<ProductEntity>(_product);
-            var result = await _productService.Update(_productDTO);
-
-            if (result == Guid.Empty)
+            
+            if (product.Id<0)
             {
                 return BadRequest("Product not updated");
             }
+            var result = await _productService.Update(product);
+
+            
 
             return Ok(result);
         }
 
         [HttpDelete("delete/id")]
-        public async Task<ActionResult> Delete(Guid id)
+        public async Task<ActionResult> Delete(uint id)
         {
             await _productService.Delete(id);
 

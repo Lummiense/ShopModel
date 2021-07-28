@@ -11,11 +11,11 @@ namespace Занятие_3.Service
     {
         AuthenticationResponse Authentication(AuthenticationRequest Request);
         Task<AuthenticationResponse> Registration(Buyer buyer);
-        Task<Guid> Add(UserEntity user);
-        UserEntity Get(Guid id);
+        Task<uint> Add(UserEntity user);
+        UserEntity Get(uint id);
         IEnumerable<UserEntity> GetAll();
-        Task<Guid> Update(UserEntity user);
-        Task Delete(Guid id);
+        Task<uint> Update(UserEntity user);
+        Task Delete(uint id);
 
         #region Реализация без паттерна Репозиторий.
         //string UserID { get; set; }

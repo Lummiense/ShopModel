@@ -16,10 +16,9 @@ namespace Занятие_3.Repository
         }
         
         /// <summary>
-        /// Получаем выборку экземпляров с применением пред-фильтрации(список составляется после фильтрации)
-        /// по типу активная-неактивная запись
+        /// Get all <T> -entities from base, filtered by active-status.
         /// </summary>
-        /// <typeparam name="модель объекта"></typeparam>
+        /// <typeparam name></typeparam>
         /// <returns></returns>
         public IQueryable<T> Get<T>() where T : class, IEntity
         {
@@ -33,12 +32,12 @@ namespace Занятие_3.Repository
 
 
         /// <summary>
-        /// Добавляем новый экземпляр класса в базу данных
+        /// Add new entity to base.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="newEntity"></param>
         /// <returns></returns>
-        public async Task<Guid> Add<T>(T newEntity) where T : class, IEntity 
+        public async Task<uint> Add<T>(T newEntity) where T : class, IEntity 
         {
            var entity = await _context.Set<T>().AddAsync(newEntity);                        
             
@@ -46,12 +45,12 @@ namespace Занятие_3.Repository
         }
 
         /// <summary>
-        /// Убираем экземпляр из подборок на отображение. При этом экземпляр остается в базе.
+        /// Set unavailable status for output by id
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task  Delete<T>(Guid id) where T : class, IEntity
+        public async Task  Delete<T>(uint id) where T : class, IEntity
         {
             var activeEntity = await _context.Set<T>().FirstOrDefaultAsync(x => x.Id == id) ;
             activeEntity.IsActive = false;
@@ -59,7 +58,7 @@ namespace Занятие_3.Repository
         }
 
         /// <summary>
-        /// Удаляем из базы данных элемент по выбранному id.
+        /// Remove from base by id.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="entity"></param>
@@ -70,7 +69,7 @@ namespace Занятие_3.Repository
         }
         
         /// <summary>
-        /// Обновляем запись в базе данных.
+        /// Update database.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="entity"></param>
@@ -81,7 +80,7 @@ namespace Занятие_3.Repository
         }
         
         /// <summary>
-        /// Сохраняем изменения в базе данных.
+        /// Save changes in database.
         /// </summary>
         /// <returns></returns>
         public async Task<int> SaveChangesAsync()

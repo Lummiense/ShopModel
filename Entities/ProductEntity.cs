@@ -8,24 +8,31 @@ namespace Занятие_3.Entities
 {
     public class ProductEntity : IEntity
     {
-        //TODO: сделать maper из сущности в модель контроллера
-        [Column(TypeName = "uuid")]
-        public Guid Id { get; set; }
+        
+        
+        public uint Id { get; set; }
 
         public bool IsActive { get; set; }
         public string Name { get; set; }
 
         public decimal Price { get; set; }
         /// <summary>
-        /// Дата производства товара.
+        /// Production date.
         /// </summary>
         public DateTime ProductionDate { get; set; }
-        //Наличие товара
-        public bool Availability { get; set; }
-        //Поставщик. Будет скрываться от покупателя, но доступно держателю магазина
-        public string Producer { get; set; }
         /// <summary>
-        /// Изображение товара.
+        /// Is product available for order now or not?
+        /// </summary>
+        public bool Availability { get; set; }
+        /// <summary>
+        /// Product manufacturer.
+        /// </summary>
+        public string Manufacturer { get; set; }
+       
+        // public ProductCategoryEntity ProductCategory { get; set; }
+        
+        /// <summary>
+        /// Product picture.
         /// </summary>
         public string ProductPicture { get; set; }
 
