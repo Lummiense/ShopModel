@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 
-namespace Занятие_3.Entities
+
+namespace ShopApi.Entities
 {
     public class ProductCategoryEntity : IEntity
 

@@ -1601,7 +1601,7 @@
       <returns>An instance of the RedirectResult class with the Permanent property set to true using the specified route values.</returns>
       <param name="routeValues">The route values.</param>
     </member>
-    <member name="P:System.Web.Mvc.Controller.Request">
+    <member name="P:System.Web.Mvc.Controller.request">
       <summary>Gets the HttpRequestBase object for the current HTTP request.</summary>
       <returns>The request object.</returns>
     </member>
@@ -1838,7 +1838,7 @@
       <summary>Gets the URL helper object that is used to generate URLs by using routing.</summary>
       <returns>The URL helper object.</returns>
     </member>
-    <member name="P:System.Web.Mvc.Controller.User">
+    <member name="P:System.Web.Mvc.Controller.user">
       <summary>Gets the user security information for the current HTTP request.</summary>
       <returns>The user security information for the current HTTP request.</returns>
     </member>
@@ -3656,10 +3656,10 @@
       <summary>Retrieves the message headers for the information or entity that is identified by the URI of the request.</summary>
     </member>
     <member name="F:System.Web.Mvc.HttpVerbs.Options">
-      <summary>Represents a request for information about the communication options available on the request/response chain identified by the Request-URI.</summary>
+      <summary>Represents a request for information about the communication options available on the request/response chain identified by the request-URI.</summary>
     </member>
     <member name="F:System.Web.Mvc.HttpVerbs.Patch">
-      <summary>Requests that a set of changes described in the   request entity be applied to the resource identified by the Request-   URI.</summary>
+      <summary>Requests that a set of changes described in the   request entity be applied to the resource identified by the request-   URI.</summary>
     </member>
     <member name="F:System.Web.Mvc.HttpVerbs.Post">
       <summary>Posts a new entity as an addition to a URI.</summary>
@@ -4978,7 +4978,7 @@
     </member>
     <member name="M:System.Web.Mvc.MvcHandler.System#Web#IHttpHandler#ProcessRequest(System.Web.HttpContext)">
       <summary>Enables processing of HTTP Web requests by a custom HTTP handler that implements the <see cref="T:System.Web.IHttpHandler" /> interface.</summary>
-      <param name="httpContext">An <see cref="T:System.Web.HttpContext" /> object that provides references to the intrinsic server objects (for example, Request, Response, Session, and Server) that are used to service HTTP requests.</param>
+      <param name="httpContext">An <see cref="T:System.Web.HttpContext" /> object that provides references to the intrinsic server objects (for example, request, Response, Session, and Server) that are used to service HTTP requests.</param>
     </member>
     <member name="T:System.Web.Mvc.MvcHtmlString">
       <summary>Represents an HTML-encoded string that should not be encoded again.</summary>

@@ -173,7 +173,7 @@
             <param name="user">The JSON-serialized Google user info</param>
             <param name="tokenResponse">The JSON-serialized token response Google</param>
         </member>
-        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.User">
+        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.user">
             <summary>
             Gets the JSON-serialized user
             </summary>
@@ -224,7 +224,7 @@
             Gets the user's profile link
             </summary>
         </member>
-        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.Email">
+        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.Username">
             <summary>
             Gets the user's email
             </summary>

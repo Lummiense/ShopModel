@@ -13,7 +13,7 @@
     <member name="M:Microsoft.Owin.Host.SystemWeb.OwinHttpHandler.BeginProcessRequest(System.Web.HttpContextBase,System.AsyncCallback,System.Object)">
       <summary>Инициирует асинхронный вызов на обработчика HTTP-данных.</summary>
       <returns>System.IAsyncResult, который содержит сведения о состоянии процесса.</returns>
-      <param name="httpContext">Объект System.Web.HttpContextBase, предоставляющий ссылки на внутренние объекты сервера (например, Request, Response, Session и Server), используемые для обслуживания HTTP-запросов.</param>
+      <param name="httpContext">Объект System.Web.HttpContextBase, предоставляющий ссылки на внутренние объекты сервера (например, request, Response, Session и Server), используемые для обслуживания HTTP-запросов.</param>
       <param name="callback">System.AsyncCallback для вызова, когда вызов асинхронного метода завершен.Если обратный вызов имеет значение null, делегат не вызывается.</param>
       <param name="extraData">Любые дополнительные данные, необходимые для обработки запроса.</param>
     </member>
@@ -29,7 +29,7 @@
       <summary>Инициирует асинхронный вызов на обработчика HTTP-данных.</summary>
       <returns>
         <see cref="T:System.IAsyncResult" />, который содержит сведения о состоянии процесса.</returns>
-      <param name="context">Объект <see cref="T:System.Web.HttpContext" />, предоставляющий ссылки на внутренние объекты сервера (например, Request, Response, Session и Server), используемые для обслуживания HTTP-запросов.</param>
+      <param name="context">Объект <see cref="T:System.Web.HttpContext" />, предоставляющий ссылки на внутренние объекты сервера (например, request, Response, Session и Server), используемые для обслуживания HTTP-запросов.</param>
       <param name="cb">
         <see cref="T:System.AsyncCallback" /> для вызова, когда вызов асинхронного метода завершен.Если обратный вызов имеет значение null, делегат не вызывается.</param>
       <param name="extraData">Любые дополнительные данные, необходимые для обработки запроса.</param>

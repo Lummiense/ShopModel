@@ -237,7 +237,7 @@
         </member>
         <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.AddUserIdentity(System.Security.Principal.IIdentity)">
             <summary>
-            Add an additional ClaimsIdentity to the ClaimsPrincipal in the "server.User" environment key
+            Add an additional ClaimsIdentity to the ClaimsPrincipal in the "server.user" environment key
             </summary>
             <param name="identity"></param>
         </member>

@@ -258,7 +258,7 @@
       <param name="key">The key of the value to get.</param>
       <typeparam name="T">The type of the value.</typeparam>
     </member>
-    <member name="P:Microsoft.Owin.IOwinContext.Request">
+    <member name="P:Microsoft.Owin.IOwinContext.request">
       <summary>Gets a wrapper exposing request specific properties.</summary>
       <returns>A wrapper exposing request specific properties.</returns>
     </member>
@@ -390,7 +390,7 @@
       <summary>Gets the uniform resource identifier (URI) associated with the request.</summary>
       <returns>The uniform resource identifier (URI) associated with the request.</returns>
     </member>
-    <member name="P:Microsoft.Owin.IOwinRequest.User">
+    <member name="P:Microsoft.Owin.IOwinRequest.user">
       <summary>Gets or sets the user that made the request.</summary>
       <returns>The user that made the request.</returns>
     </member>
@@ -552,7 +552,7 @@
       <param name="key">The key.</param>
       <typeparam name="T">The generic type.</typeparam>
     </member>
-    <member name="P:Microsoft.Owin.OwinContext.Request">
+    <member name="P:Microsoft.Owin.OwinContext.request">
       <summary>Gets a wrapper exposing request specific properties.</summary>
       <returns>A wrapper exposing request specific properties.</returns>
     </member>
@@ -653,7 +653,7 @@
       <summary>Получает информацию об URL-адресе текущего запроса.</summary>
       <returns>Информация об URL-адресе текущего запроса.</returns>
     </member>
-    <member name="P:Microsoft.Owin.OwinRequest.User">
+    <member name="P:Microsoft.Owin.OwinRequest.user">
       <summary>Получает или задает имя пользователя для данного запроса.</summary>
       <returns>Имя пользователя для данного запроса.</returns>
     </member>
@@ -1679,7 +1679,7 @@
       <summary>Handles the sign-out process after authentication.</summary>
       <param name="authenticationTypes">The types of authentication.</param>
     </member>
-    <member name="P:Microsoft.Owin.Security.IAuthenticationManager.User">
+    <member name="P:Microsoft.Owin.Security.IAuthenticationManager.user">
       <summary>Gets or sets the ClaimsPrincipal user.</summary>
       <returns>The ClaimsPrincipal user.</returns>
     </member>

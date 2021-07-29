@@ -33,7 +33,7 @@
     <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.AccessToken">
       <summary>Получает токен доступа Facebook</summary>
     </member>
-    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.Email">
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.Username">
       <summary>Получает электронную почту Facebook</summary>
     </member>
     <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.ExpiresIn">
@@ -55,7 +55,7 @@
     <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.Properties">
       <summary>Получает или задает контейнер свойств для общих свойств проверки подлинности</summary>
     </member>
-    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.User">
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.user">
       <summary>Получает пользователя, сериализованного в формате JSON</summary>
     </member>
     <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.UserName">

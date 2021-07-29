@@ -1,26 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Занятие_3.Entities;
-using Занятие_3.Repository;
+using ShopApi.Entities;
+using ShopApi.Repository;
 
-namespace Занятие_3.Service
+namespace ShopApi.Service
 {
-    //TODO: Добавить категории товаров
     public class ProductService : IProductService
     {
         private readonly IDbRepository _dbRepository;
+
         public ProductService(IDbRepository dbRepository)
         {
             _dbRepository = dbRepository;
         }
+
         public async Task<uint> Add(ProductEntity product)
         {
             //Set product`s category
             //product.ProductCategory.Products.Add(product);
             var result = await _dbRepository.Add(product);
+
             #region Product add exception
+
             if (product == null)
             {
                 throw new ArgumentNullException("Товар не добавлен");
@@ -43,17 +45,20 @@ namespace Занятие_3.Service
             }
 
             #endregion
+
             await _dbRepository.SaveChangesAsync();
             return result;
 
         }
+
         public ProductEntity Get(uint id)
         {
             var entity = _dbRepository.Get<ProductEntity>().FirstOrDefault(x => x.Id == id);
-            if (entity ==null)
+            if (entity == null)
             {
                 throw new ArgumentNullException("Такого товара не существует");
             }
+
             return entity;
         }
 
@@ -64,11 +69,12 @@ namespace Занятие_3.Service
             {
                 throw new ArgumentNullException("Order with this ID don`t exist");
             }
+
             await _dbRepository.Delete<ProductEntity>(id);
             await _dbRepository.SaveChangesAsync();
         }
 
-        
+
 
         public async Task<uint> Update(ProductEntity product)
         {
@@ -76,19 +82,5 @@ namespace Занятие_3.Service
             await _dbRepository.SaveChangesAsync();
             return product.Id;
         }
-
-        
-        #region Реализация без паттерна Репозиторий.
-        //public int GetProductId(int Id)
-        //{
-
-        //    return Id;
-        //}
-
-        //public Product ProductInformation(Product product)
-        //{
-        //    return product;
-        //}
-        #endregion
     }
 }

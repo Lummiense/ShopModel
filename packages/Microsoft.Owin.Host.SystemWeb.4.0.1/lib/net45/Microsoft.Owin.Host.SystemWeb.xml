@@ -245,7 +245,7 @@
             </summary>
             <param name="httpContext">
             An System.Web.HttpContextBase object that provides references to intrinsic server
-            objects (for example, Request, Response, Session, and Server) used to service
+            objects (for example, request, Response, Session, and Server) used to service
             HTTP requests.
             </param>
             <param name="callback">
@@ -430,7 +430,7 @@
         </member>
         <member name="M:Microsoft.Owin.Host.SystemWeb.SystemWebCookieManager.GetRequestCookie(Microsoft.Owin.IOwinContext,System.String)">
             <summary>
-            Reads the requested cookie from System.Web.HttpContextBase.Request.Cookies.
+            Reads the requested cookie from System.Web.HttpContextBase.request.Cookies.
             </summary>
             <param name="context"></param>
             <param name="key"></param>

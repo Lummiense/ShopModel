@@ -412,7 +412,7 @@
         </member>
         <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.GetUserAggregateAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
-            Used to attach child entities to the User aggregate, i.e. Roles, Logins, and Claims
+            Used to attach child entities to the user aggregate, i.e. Roles, Logins, and Claims
             </summary>
             <param name="filter"></param>
             <returns></returns>
@@ -479,7 +479,7 @@
             <summary>
                 EntityFramework based IIdentityEntityStore that allows query/manipulation of a TEntity set
             </summary>
-            <typeparam name="TEntity">Concrete entity type, i.e .User</typeparam>
+            <typeparam name="TEntity">Concrete entity type, i.e .user</typeparam>
         </member>
         <member name="M:Microsoft.AspNet.Identity.EntityFramework.EntityStore`1.#ctor(System.Data.Entity.DbContext)">
             <summary>
@@ -777,12 +777,12 @@
         </member>
         <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.DuplicateEmail">
             <summary>
-              Looks up a localized string similar to Email {0} is already taken..
+              Looks up a localized string similar to Username {0} is already taken..
             </summary>
         </member>
         <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.DuplicateUserName">
             <summary>
-              Looks up a localized string similar to User name {0} is already taken..
+              Looks up a localized string similar to user name {0} is already taken..
             </summary>
         </member>
         <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.EntityFailedValidation">
@@ -827,7 +827,7 @@
         </member>
         <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.UserAlreadyInRole">
             <summary>
-              Looks up a localized string similar to User already in role..
+              Looks up a localized string similar to user already in role..
             </summary>
         </member>
         <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.UserIdNotFound">
@@ -842,12 +842,12 @@
         </member>
         <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.UserNameNotFound">
             <summary>
-              Looks up a localized string similar to User {0} does not exist..
+              Looks up a localized string similar to user {0} does not exist..
             </summary>
         </member>
         <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.UserNotInRole">
             <summary>
-              Looks up a localized string similar to User is not in role..
+              Looks up a localized string similar to user is not in role..
             </summary>
         </member>
         <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.ValueCannotBeNullOrEmpty">
@@ -917,9 +917,9 @@
                 Constructor
             </summary>
         </member>
-        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.Email">
+        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.Username">
             <summary>
-                Email
+                Username
             </summary>
         </member>
         <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.EmailConfirmed">
@@ -984,12 +984,12 @@
         </member>
         <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.Id">
             <summary>
-                User ID (Primary Key)
+                user ID (Primary Key)
             </summary>
         </member>
         <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.UserName">
             <summary>
-                User name
+                user name
             </summary>
         </member>
         <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityUser.#ctor">
@@ -1021,7 +1021,7 @@
         </member>
         <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim`1.UserId">
             <summary>
-                User Id for the user who owns this login
+                user Id for the user who owns this login
             </summary>
         </member>
         <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim`1.ClaimType">
@@ -1057,7 +1057,7 @@
         </member>
         <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin`1.UserId">
             <summary>
-                User Id for the user who owns this login
+                user Id for the user who owns this login
             </summary>
         </member>
     </members>

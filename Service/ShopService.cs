@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Занятие_3.Entities;
-using Занятие_3.Repository;
+using ShopApi.Entities;
+using ShopApi.Repository;
 
-namespace Занятие_3.Service
+namespace ShopApi.Service
 {
     public class ShopService : IShopService
     {
@@ -52,31 +51,5 @@ namespace Занятие_3.Service
             await _dbRepository.SaveChangesAsync();
             return shop.Id;
         }
-
-        #region Реализация без паттерна Репозиторий.
-        //public int GetShopId(int id)
-        //{            
-        //    return id;
-        //}
-        //private readonly DataContext _context;
-        //public async Task<string> SetShopName(ShopModel shop)
-        //{
-
-        //    var entity = await _context.Shops.AddAsync(shop);
-        //    await _context.SaveChangesAsync();
-        //    return shop.Name;
-        //}
-
-
-        //public ShopService(DataContext context)
-        //{
-        //    _context = context;
-
-        //}
-        //public Shop ShopInformation(Shop shop)
-        //{
-        //    return shop;
-        //}
-        #endregion
     }
 }

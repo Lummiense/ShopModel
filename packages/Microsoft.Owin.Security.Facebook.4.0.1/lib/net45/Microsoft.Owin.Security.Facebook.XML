@@ -171,7 +171,7 @@
             <param name="accessToken">Facebook Access token</param>
             <param name="expires">Seconds until expiration</param>
         </member>
-        <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.User">
+        <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.user">
             <summary>
             Gets the JSON-serialized user
             </summary>
@@ -201,7 +201,7 @@
             Gets the Facebook username
             </summary>
         </member>
-        <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.Email">
+        <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.Username">
             <summary>
             Gets the Facebook email
             </summary>

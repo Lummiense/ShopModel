@@ -1,9 +1,9 @@
 ﻿using System;
 using AutoMapper;
-using Занятие_3.Entities;
-using Занятие_3.Model;
+using ShopApi.Entities;
+using ShopApi.Model;
 
-namespace Занятие_3.Profiles
+namespace ShopApi.Profiles
 {
     public class ProductForBuyerProfile:Profile
     {

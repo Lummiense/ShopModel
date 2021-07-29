@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Занятие_3.Entities;
-using Занятие_3.Model;
-using Занятие_3.Repository;
+using ShopApi.Entities;
+using ShopApi.Repository;
 
-namespace Занятие_3.Service
+namespace ShopApi.Service
 {
-    public class OrderService:IOrderService
+    public class OrderService : IOrderService
     {
         private readonly IDbRepository _dbRepository;
         public OrderService(IDbRepository dbRepository)
@@ -16,7 +14,7 @@ namespace Занятие_3.Service
             _dbRepository = dbRepository;
         }
 
-        public OrderEntity Get(uint id)
+          public OrderEntity Get(uint id)
         {
             var entity = _dbRepository.Get<OrderEntity>().FirstOrDefault(x => x.Id == id);
             return entity; ;

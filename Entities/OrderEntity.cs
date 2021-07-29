@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Занятие_3.Entities
+namespace ShopApi.Entities
 {
     public class OrderEntity : IEntity
     {
@@ -34,6 +32,6 @@ namespace Занятие_3.Entities
 
         public string[] OrderStatusVariation = {"Created", "Paid", "Delivered"};
         public string OrderStatus { get; set; }
-       
+
     }
 }

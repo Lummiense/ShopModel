@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Занятие_3": {
+    "ShopApi": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

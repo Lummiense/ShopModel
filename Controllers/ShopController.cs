@@ -4,13 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Занятие_3.Entities;
-using Занятие_3.Model;
-using Занятие_3.Service;
+using ShopApi.Entities;
+using ShopApi.Model;
+using ShopApi.Service;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace Занятие_3.Controllers
+namespace ShopApi.Controllers
 {
     [Route("shop")]
     [ApiController]

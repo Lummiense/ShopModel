@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Numerics;
 
-namespace Занятие_3.Entities
+namespace ShopApi.Entities
 {
     public class ProductEntity : IEntity
     {
         
-        
+        [Column(TypeName = "integer")]
         public uint Id { get; set; }
 
         public bool IsActive { get; set; }
@@ -35,7 +33,5 @@ namespace Занятие_3.Entities
         /// Product picture.
         /// </summary>
         public string ProductPicture { get; set; }
-
-
     }
 } 

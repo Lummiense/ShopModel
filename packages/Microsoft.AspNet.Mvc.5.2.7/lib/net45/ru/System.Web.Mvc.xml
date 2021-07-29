@@ -1604,7 +1604,7 @@
       <returns>Экземпляр класса RedirectResult со свойством Permanent, имеющим значение «true», использующий заданные значения маршрута.</returns>
       <param name="routeValues">Значения маршрута.</param>
     </member>
-    <member name="P:System.Web.Mvc.Controller.Request">
+    <member name="P:System.Web.Mvc.Controller.request">
       <summary>Получает объект HttpRequestBase для текущего HTTP-запроса.</summary>
       <returns>Объект запроса.</returns>
     </member>
@@ -1841,7 +1841,7 @@
       <summary>Получает объект вспомогательного метода URL-адреса, используемый для создания URL-адресов с помощью маршрутизации.</summary>
       <returns>Вспомогательный объект технологии URL.</returns>
     </member>
-    <member name="P:System.Web.Mvc.Controller.User">
+    <member name="P:System.Web.Mvc.Controller.user">
       <summary>Получает сведения о безопасности пользователя для текущего HTTP-запроса.</summary>
       <returns>Сведения о безопасности пользователя для текущего HTTP-запроса.</returns>
     </member>
@@ -3657,10 +3657,10 @@
       <summary>Извлекает заголовки сообщений для сведений или сущности, определенных универсальным кодом ресурса (URI) запроса.</summary>
     </member>
     <member name="F:System.Web.Mvc.HttpVerbs.Options">
-      <summary>Представляет запрос сведений о вариантах связи, доступных для цепочки запросов и ответов, по Request-URI.</summary>
+      <summary>Представляет запрос сведений о вариантах связи, доступных для цепочки запросов и ответов, по request-URI.</summary>
     </member>
     <member name="F:System.Web.Mvc.HttpVerbs.Patch">
-      <summary>Запрашивает применение набора изменений, описанных в объекте запроса, к ресурсу, на который указывает Request-URI.</summary>
+      <summary>Запрашивает применение набора изменений, описанных в объекте запроса, к ресурсу, на который указывает request-URI.</summary>
     </member>
     <member name="F:System.Web.Mvc.HttpVerbs.Post">
       <summary>Публикует новую сущность в качестве дополнения к универсальному коду ресурса (URI).</summary>
@@ -4967,7 +4967,7 @@
     </member>
     <member name="M:System.Web.Mvc.MvcHandler.System#Web#IHttpHandler#ProcessRequest(System.Web.HttpContext)">
       <summary>Разрешает обработку веб-запросов НТТР пользовательским обработчиком HTTP-данных, который реализует интерфейс <see cref="T:System.Web.IHttpHandler" />.</summary>
-      <param name="httpContext">Объект <see cref="T:System.Web.HttpContext" />, предоставляющий ссылки на внутренние объекты сервера (например, Request, Response, Session и Server), используемые для обслуживания HTTP-запросов.</param>
+      <param name="httpContext">Объект <see cref="T:System.Web.HttpContext" />, предоставляющий ссылки на внутренние объекты сервера (например, request, Response, Session и Server), используемые для обслуживания HTTP-запросов.</param>
     </member>
     <member name="T:System.Web.Mvc.MvcHtmlString">
       <summary>Представляет HTML-кодированную строку, которую не следует перекодировать еще раз.</summary>
